@@ -1,1 +1,39 @@
 @charset "UTF-8";
+
+body {
+    font-family: sans-serif;
+    background-color: #fffaf0;
+    color: #3f3f3f;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.header__title {
+    font-family: italianno;
+}
+
+.header__text {
+    padding: 5px;
+    border: 2px solid #ffa07a;
+    text-align: center;
+}
+
+.header__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+.header__item {
+    margin-left: 5px;
+}
+
+.main__img {
+    width: 800px;
+    text-align: center;
+}
