@@ -34,6 +34,31 @@ body {
 }
 
 .main__img {
-    width: 800px;
+    width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+#about {
+    background-color: #ffe0e0;
+}
+
+.about__title {
     text-align: center;
+}
+
+.about__inner {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+
+.about__img {
+    width: 500px;
+    border-radius: 30%;
+}
+
+.about__text {
+    width: 400px;
+    margin: 0 auto;
 }
