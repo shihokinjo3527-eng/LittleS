@@ -39,7 +39,6 @@ p {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding-left: 0;
     margin: 20px;
 }
 
@@ -121,4 +120,44 @@ p {
 
 .delivery__list {
     list-style: none;
+}
+
+.pay {
+    text-align: center;
+}
+
+.pay__list {
+    list-style: none;
+}
+
+.closed {
+    text-align: center;
+}
+
+.closed__list {
+    list-style: none;
+}
+
+#FAQ {
+    padding: 20px;
+}
+
+.footer {
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+}
+
+.logo {
+    width: 100px;
+    margin-right: 50px;
+}
+
+.footer__list {
+    display: flex;
+    list-style: none;
+}
+
+.footer__item {
+    margin: 50px;
 }
