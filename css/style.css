@@ -47,10 +47,9 @@ p {
 }
 
 .main__img {
-    width: 500px;
+    width: 100%;
     margin: 0 auto;
     display: block;
-    height: 700px;
 }
 
 #about {
@@ -101,7 +100,7 @@ p {
     margin: 20px;
     padding: 20px;
     background-color: #ffe0e0;
-    border-radius: 15%;
+    border-radius: 10%;
 }
 
 .shopping__guider__list {
@@ -156,6 +155,7 @@ p {
 .footer__list {
     display: flex;
     list-style: none;
+
 }
 
 .footer__item {
