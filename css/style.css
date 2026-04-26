@@ -2,7 +2,7 @@
 
 body {
     font-family: sans-serif;
-    background-color: #fffaf0;
+    background-color: #F7F3ED;
     color: #3f3f3f;
 }
 
@@ -13,10 +13,20 @@ a {
 h2 {
     font-size: 35px;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 p {
     font-size: 18px;
+}
+
+section {
+    margin-top: 120px;
+}
+
+.header {
+    background-color: #F8CA12;
+    padding: 20px;
 }
 
 .header__top {
@@ -26,52 +36,79 @@ p {
 }
 
 .header__title {
-    font-family: italianno;
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    padding: 20px 0 0 50px;
 }
 
-.header__text {
-    padding: 5px;
-    border: 2px solid #ffa07a;
+.header__cart {
     text-align: center;
+    width: 39px;
+}
+
+.header__cart img {
+    width: 100%;
+}
+
+.header__cart img:hover {
+    opacity: 0.5;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .header__list {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 20px;
+    margin-right: 50px;
 }
 
 .header__item {
-    margin-left: 30px;
+    margin-left: 100px;
+    font-size: 18px;
+}
+
+.header__item a {
+    color: #F7F3ED;
+}
+
+.header__item a:hover {
+    opacity: 0.5;
 }
 
 .main__img {
-    width: 100%;
     margin: 0 auto;
     display: block;
 }
 
 #about {
-    background-color: #ffe0e0;
-    margin: 20px;
-    border-radius: 15%;
+    background-color: #87C0CA;
+    padding-top: 30px;
 }
 
 .about__inner {
     display: flex;
     align-items: center;
-    padding: 50px;
+    margin: 0 150px;
+    gap: 40px;
+    padding-bottom: 50px;
 }
 
 .about__img {
     width: 500px;
-    border-radius: 30%;
     margin: 0 auto;
 }
 
-.about__text {
-    width: 400px;
+.about__text:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+.about__message {
     margin: 0 auto;
 }
 
@@ -82,7 +119,7 @@ p {
 .desc__flex {
     display: flex;
     align-items: center;
-    padding: 50px;
+    margin-bottom: 50px;
 }
 
 .desc {
@@ -90,26 +127,40 @@ p {
     width: 500px;
 }
 
-.product__picture img {
-    width: 500px;
-    border-radius: 20%;
-    margin: 0 auto;
+.product__button {
+    margin-top: 20px;
 }
 
-#shopping__guide {
-    margin: 20px;
-    padding: 20px;
-    background-color: #ffe0e0;
-    border-radius: 10%;
+.product__button a {
+    color: #F7F3ED;
+    padding: 20px 40px;
+    background: #F8CA12;
+    border-radius: 30px;
+}
+
+.product__button a:hover {
+    background: #F7F3ED;
+    color: #F8CA12;
+    border: 2px solid #F8CA12;
+}
+
+.swiper {
+    width: 30%;
+}
+
+.swiper-slide img {
+    height: auto;
+    width: 100%;
+}
+
+.shopping__wrapper {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 .shopping__guider__list {
     display: flex;
     list-style: none;
-}
-
-.shopping__guider__item {
-    margin-left: 30px;
 }
 
 .delivery {
@@ -137,14 +188,129 @@ p {
     list-style: none;
 }
 
+.tab-area {
+    display: flex;
+    border: 1px solid #333;
+    cursor: pointer;
+    max-width: 500px;
+    width: 100%;
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100%/3);
+    padding: 10px;
+    background-color: #cccccc;
+}
+
+.tab:nth-child(n+2) {
+    border-left: 1px solid #333;
+}
+
+.tab.active {
+    background-color: #023e8a;
+    color: #fff;
+}
+
+.panel {
+    display: none;
+    background-color: #87C0CA;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    height: 365px;
+    text-align: justify;
+}
+
+.panel.active {
+    display: block;
+}
+
 #FAQ {
-    padding: 20px;
+    margin-bottom: 120px;
+}
+
+.accordion {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.accordion-content {
+    display: none;
+}
+
+.accordion-header {
+    background-color: #FFF;
+    padding: 12px 45px 10px 20px;
+    margin: 10px 0 0;
+    transition: background .3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion-header::before,
+.accordion-header::after {
+    position: absolute;
+    content: '';
+    top: 1px;
+    right: 20px;
+    bottom: 0;
+    width: 12px;
+    height: 2px;
+    margin: auto;
+    background: #151E2F;
+}
+
+.accordion-header::after {
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+.accordion-header.active::after {
+    transform: rotate(0deg);
+}
+
+.accordion-content {
+    background-color: #FFF;
+    padding: 12px 20px 10px;
+}
+
+.accordion-header span,
+.accordion-content span {
+    padding-left: 25px;
+    position: relative;
+}
+
+.accordion-header span::before {
+    position: absolute;
+    content: "Q";
+    top: 2px;
+    left: 0;
+    color: #151E2F;
+    font-size: 17px;
+}
+
+
+.accordion-content span::before {
+    position: absolute;
+    content: "A";
+    top: 3px;
+    left: 0;
+    color: #151E2F;
+    font-size: 17px;
+}
+
+.accordion-header:hover {
+    background-color: #F2F2F2;
 }
 
 .footer {
     display: flex;
     padding: 50px;
     justify-content: center;
+    background-color: #F8CA12;
 }
 
 .logo {
@@ -160,4 +326,12 @@ p {
 
 .footer__item {
     margin: 50px;
+}
+
+.footer__item a {
+    color: #F7F3ED;
+}
+
+.footer__item a:hover {
+    opacity: 0.5;
 }
