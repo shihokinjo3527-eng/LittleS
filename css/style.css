@@ -84,6 +84,7 @@ section {
 .main__img {
     margin: 0 auto;
     display: block;
+    width: 100%;
 }
 
 #about {
@@ -112,10 +113,6 @@ section {
     margin: 0 auto;
 }
 
-#product {
-    padding: 30px;
-}
-
 .desc__flex {
     display: flex;
     align-items: center;
@@ -127,6 +124,10 @@ section {
     width: 500px;
 }
 
+.product__inner {
+    margin: 0 auto;
+}
+
 .product__button {
     margin-top: 20px;
 }
@@ -134,18 +135,20 @@ section {
 .product__button a {
     color: #F7F3ED;
     padding: 20px 40px;
-    background: #F8CA12;
+    background: #EF8D1E;
     border-radius: 30px;
 }
 
 .product__button a:hover {
     background: #F7F3ED;
-    color: #F8CA12;
-    border: 2px solid #F8CA12;
+    color: #EF8D1E;
+    border: 2px solid #EF8D1E;
 }
 
 .swiper {
     width: 30%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 .swiper-slide img {
@@ -167,6 +170,10 @@ section {
     text-align: center;
 }
 
+.delivery__title:nth-of-type(2) {
+    margin-top: 20px;
+}
+
 
 .delivery__list {
     list-style: none;
@@ -176,8 +183,13 @@ section {
     text-align: center;
 }
 
+.pay__text {
+    margin-top: 20px;
+}
+
 .pay__list {
     list-style: none;
+    margin-top: 20px;
 }
 
 .closed {
@@ -186,11 +198,12 @@ section {
 
 .closed__list {
     list-style: none;
+    margin-top: 20px;
 }
 
 .tab-area {
     display: flex;
-    border: 1px solid #333;
+    border: 1px solid #5987BF;
     cursor: pointer;
     max-width: 500px;
     width: 100%;
@@ -202,33 +215,35 @@ section {
     align-items: center;
     width: calc(100%/3);
     padding: 10px;
-    background-color: #cccccc;
+    background-color: #FFF;
 }
 
 .tab:nth-child(n+2) {
-    border-left: 1px solid #333;
+    border-left: 1px solid #5987BF;
 }
 
 .tab.active {
-    background-color: #023e8a;
+    background-color: #87C0CA;
     color: #fff;
 }
 
 .panel {
     display: none;
-    background-color: #87C0CA;
+    background-color: #FFF;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 0;
-    height: 365px;
+    padding: 20px;
     text-align: justify;
+    border: 1px solid #5987BF;
+    min-height: 386px;
 }
 
 .panel.active {
     display: block;
 }
 
-#FAQ {
+
+#faq {
     margin-bottom: 120px;
 }
 
@@ -243,8 +258,8 @@ section {
 
 .accordion-header {
     background-color: #FFF;
-    padding: 12px 45px 10px 20px;
-    margin: 10px 0 0;
+    padding: 15px 45px 15px 20px;
+    margin: 15px 0 0;
     transition: background .3s ease;
     cursor: pointer;
     position: relative;
@@ -260,7 +275,7 @@ section {
     width: 12px;
     height: 2px;
     margin: auto;
-    background: #151E2F;
+    background: #87C0CA;
 }
 
 .accordion-header::after {
@@ -283,20 +298,24 @@ section {
     position: relative;
 }
 
+.indent {
+    display: inline-block;
+}
+
 .accordion-header span::before {
     position: absolute;
     content: "Q";
-    top: 2px;
+    top: -2px;
     left: 0;
     color: #151E2F;
     font-size: 17px;
 }
 
 
-.accordion-content span::before {
+.accordion-content .answer::before {
     position: absolute;
     content: "A";
-    top: 3px;
+    top: -1px;
     left: 0;
     color: #151E2F;
     font-size: 17px;
