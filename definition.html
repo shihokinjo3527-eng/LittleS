@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>商品確定画面</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Pinyon+Script&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="header__top">
+                <h1 class="header__title">Little S</h1>
+            </div>
+            <div class="header__wrapper">
+                <input type="checkbox" id="menu-toggle" hidden>
+                <label class="menu-icon" for="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="overlay"></div>
+
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li class="header__item"><a href="#">Home</a></li>
+                        <li class="header__item"><a href="#about">About</a></li>
+                        <li class="header__item"><a href="#product">Product</a></li>
+                        <li class="header__item"><a href="#shopping__guide">Shopping Guide</a></li>
+                        <li class="header__item"><a href="#faq">FAQ</a></li>
+                    </ul>
+                    <button class="header__cart">
+                        <a href="cart.html"><img src="picture/cart.png" alt="カート">
+                        </a>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <h2>ご注文ありがとうございます！</h2>
+        <p>注文確認メールを送信しました</p>
+
+        <!--
+        確認ボタン
+        押したら localStorage に保存してホームへ移動します
+    -->
+        <button id="">ホームに戻る</button>
+
+
+        <footer class="footer">
+            <img src="picture/logo.png" class="logo" alt="ロゴ">
+            <ul class="footer__list">
+                    <li class="footer__item"><a href="#">Home</a></li>
+                    <li class="footer__item"><a href="#about">About</a></li>
+                    <li class="footer__item"><a href="#product">Product</a></li>
+                    <li class="footer__item"><a href="#shopping__guide">Shopping Guide</a></li>
+                    <li class="footer__item"><a href="#faq">FAQ</a></li>
+                </ul>
+        </footer>
+    </body>
+
+</html>
