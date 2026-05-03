@@ -34,12 +34,21 @@ const swiper = new Swiper(".swiper", {
 });
 
 //フェードイン
-$(function(){
-  $(".inview_re").on("inview", function (event, isInView) {
-    if (isInView) {
-      $(this).stop().addClass("is-show");
-    } else {
-      $(this).stop().removeClass("is-show");
-    }
+$(function() {
+  // スクロールイベント
+  $(window).scroll(function() {
+    // スクロール量を取得
+    const scroll = $(window).scrollTop();
+    // 画面の高さを取得
+    const windowHeight = $(window).height();
+
+    $(".about__inner").each(function() {
+      // それぞれの.boxまでの高さを取得
+      const boxHeight = $(this).offset().top;
+      // 条件式に合致する場合はis-activeを付与
+      if(scroll + windowHeight > boxHeight) {
+        $(this).addClass("is-active");
+      }
+    });
   });
 });

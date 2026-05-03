@@ -100,22 +100,22 @@ section {
     margin: 0 150px;
     gap: 40px;
     padding-bottom: 50px;
-}
-
-/*フェードイン*/
-.fadeIn_up {
+    aspect-ratio: 16 / 9;
     opacity: 0;
-    transform: translate(0, 50%);
-    transition: 2s;
+    visibility: hidden;
+    transition: all 1s;
+    transform: translateY(150px);
 }
 
-.fadeIn_up.is-show {
-    transform: translate(0, 0);
+.is-active {
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
+
 
 .about__img {
-    width: 500px;
+    width: 70%;
     margin: 0 auto;
 }
 
