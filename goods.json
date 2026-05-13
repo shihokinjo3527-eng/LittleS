@@ -1,14 +1,14 @@
 [
   {
     "productId": "P001",
-    "productName": "ヘアオイル（シトラス）",
-    "price": 3200,
-    "image":"assets/img/product_citrus.jpg"
+    "productName": "フラワーブレスレット",
+    "price": 2000,
+    "image":"picture/bracelet1.png"
   },
   {
     "productId": "P002",
-    "productName": "ヘアオイル（フローラル）",
-    "price": 3200,
-    "image":"assets/img/product_floral.jpg"
+    "productName": "フラワーリング",
+    "price": 1500,
+    "image":"picture/ring1.png"
   }
 ]

@@ -45,27 +45,30 @@
 
         <h2>商品確認画面</h2>
 
+
         <!--
         JSONから読み込んだ商品IDを表示する場所
     -->
-        <p>商品ID: <span id="productId"></span></p>
+        <p class="confirm__p">商品ID: <span id="productId"></span></p>
 
         <!--
         JSONから読み込んだ商品名を表示する場所
     -->
-        <p>商品名: <span id="productName"></span></p>
+        <p class="confirm__p">商品名: <span id="productName"></span></p>
 
         <!--
         JSONから読み込んだ価格を表示する場所
     -->
-        <p>価格: <span id="price"></span>円</p>
+        <p class="confirm__p">価格: <span id="price"></span>円</p>
 
         <!--
         個数入力欄
         ユーザーが購入したい数量を入力します
     -->
-        <label for="quantity">個数</label>
-        <input type="number" id="quantity" min="1" placeholder="個数を入力">
+        <div class="quantity">
+            <label for="quantity">個数</label>
+            <input type="number" id="quantity" min="1" placeholder="個数を入力">
+        </div>
 
         <br><br>
 
@@ -73,8 +76,9 @@
         確認ボタン
         押したら localStorage に保存して確定画面へ移動します
     -->
-        <button id="definitionButton">注文を確定する</button>
-
+        <div class="definitionButton">
+            <button id="definitionButton">注文を確定する</button>
+        </div>
 
         <footer class="footer">
             <img src="picture/logo.png" class="logo" alt="ロゴ">
