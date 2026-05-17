@@ -145,6 +145,10 @@ section {
     margin: 0 auto;
 }
 
+.s__product__inner {
+    display: none;
+}
+
 .product__name {
     margin-bottom: 20px;
     font-size: 25px;
@@ -226,6 +230,10 @@ section {
 .closed__list {
     list-style: none;
     margin-top: 20px;
+}
+
+.s__panel {
+    display: none;
 }
 
 /*FAQ*/
@@ -401,7 +409,60 @@ section {
     margin-bottom: 30px;
 }
 
-/*商品確定画面*/
+.form__section {
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+#name {
+    border: 1px solid #3f3f3f;
+}
+
+#post {
+    border: 1px solid #3f3f3f;
+}
+
+#address {
+    border: 1px solid #3f3f3f;
+}
+
+#email {
+    border: 1px solid #3f3f3f;
+}
+
+#tel {
+    border: 1px solid #3f3f3f;
+}
+
+.confirm__button {
+    display: block;
+    margin: 0 auto;
+}
+
+.confirm__button a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #F7F3ED;
+    padding: 20px 40px;
+    background: #EF8D1E;
+    border-radius: 30px;
+    border: transparent 2px solid;
+}
+
+.confirm__button a:hover {
+    background: #F7F3ED;
+    color: #EF8D1E;
+    border: 2px solid #EF8D1E;
+}
+
+/*完了画面*/
 
 .definition__h2 {
     text-align: center;
@@ -414,11 +475,103 @@ section {
 }
 
 .definition__button {
-    text-align: center;
-    margin-bottom: 30px;
+    display: block;
+    margin: 0 auto;
 }
 
+.definition__button a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #F7F3ED;
+    padding: 20px 40px;
+    background: #EF8D1E;
+    border-radius: 30px;
+    border: transparent 2px solid;
+}
+
+.definition__button a:hover {
+    background: #F7F3ED;
+    color: #EF8D1E;
+    border: 2px solid #EF8D1E;
+}
+
+/*カート画面*/
+
+.cart__flex {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.cart__text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cart__title {
+    text-align: center;
+    margin: 50px;
+}
+
+.cart__button__flex {
+    display: flex;
+}
+
+.cart__button {
+    display: block;
+    margin: 0 auto;
+}
+
+.cart__button a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #F7F3ED;
+    padding: 20px 40px;
+    background: #EF8D1E;
+    border-radius: 30px;
+    border: transparent 2px solid;
+}
+
+.cart__button a:hover {
+    background: #F7F3ED;
+    color: #EF8D1E;
+    border: 2px solid #EF8D1E;
+}
+
+.cart__next__button {
+    display: block;
+    margin: 0 auto;
+}
+
+.cart__next__button a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #F7F3ED;
+    padding: 20px 40px;
+    background: #EF8D1E;
+    border-radius: 30px;
+    border: transparent 2px solid;
+}
+
+.cart__next__button a:hover {
+    background: #F7F3ED;
+    color: #EF8D1E;
+    border: 2px solid #EF8D1E;
+}
+
+
 @media screen and (max-width: 767px) {
+
+    .header__top {
+        display: block;
+        text-align: center;
+    }
 
     .menu-wrapper {
         position: relative;
@@ -430,7 +583,7 @@ section {
         position: fixed;
         /* ← fixedにして常に左上固定 */
         top: 20px;
-        left: 20px;
+        right: 20px;
         cursor: pointer;
         z-index: 3;
         display: inline-block;
@@ -475,22 +628,24 @@ section {
     .header__nav {
         position: fixed;
         top: 0;
-        left: -250px;
+        right: -250px;
         width: 250px;
         height: 100%;
-        background: #fff;
+        background: #F7F3ED;
         box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
         transition: left 0.4s ease;
         z-index: 2;
     }
 
     #menu-toggle:checked~.header__nav {
-        left: 0;
+        right: 0;
     }
 
     .header__list {
         list-style: none;
         padding: 60px 20px;
+        display: block;
+        margin: 0 auto;
     }
 
     .header__item {
@@ -511,6 +666,57 @@ section {
 
     .about__inner {
         display: block;
+        text-align: center;
     }
+
+    .product__inner {
+        display: none;
+    }
+
+    .s__product__inner {
+        display: block;
+    }
+
+    .desc__flex {
+        display: block;
+    }
+
+    .desc {
+        margin: 0 auto;
+    }
+
+    .panel-area {
+        display: none;
+    }
+
+    .shopping__guider__list {
+        display: none;
+    }
+
+    .s__panel {
+        display: block;
+    }
+
+    .s__box {
+        display: block;
+        margin: 20px;
+        border: 2px solid #5987BF;
+        padding: 10px;
+    }
+
+    .accordion-header {
+        margin: 15px 10px;
+    }
+
+    .footer {
+        padding: 20px;
+        align-items: center;
+    }
+
+    .footer__item {
+        margin: 20px;
+    }
+
+
 
 }

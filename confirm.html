@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>商品確認画面</title>
+        <title>確認画面</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
             </div>
         </header>
 
-        <h2>商品確認画面</h2>
+        <h2>確認画面</h2>
 
 
         <!--
@@ -72,13 +72,44 @@
 
         <br><br>
 
+        <form action="#" method="post" class="form__section">
+            <div class="form">
+                <label class="label" for="name">名前（必須）</label>
+                <input id="name" type="text" name="name">
+            </div>
+            <div class="form">
+                <label class="post" for="number">郵便番号（必須）</label>
+                <input id="post" type="text" name="post">
+            </div>
+            <div class="form">
+                <label class="address" for="address">住所（必須）</label>
+                <input id="address" type="text" name="address">
+            </div>
+            <div class="form">
+                <label class="email" for="email">メールアドレス（必須）</label>
+                <input id="email" type="text" name="email">
+            </div>
+            <div class="form">
+                <label class="tel" for="tel">電話番号</label>
+                <input id="tel" type="text" name="tel">
+            </div>
+            <div class="radiobutton">
+                <p class="radio__title">支払い方法（必須）</p>
+                <input type="radio" id="credit" name="drone" value="credit" checked />
+                <label for="credit">クレジット</label>
+                <input type="radio" id="convenience" name="drone" value="convenience" checked />
+                <label for="convenience">コンビニ支払い</label>
+                <input type="radio" id="bank" name="drone" value="bank" checked />
+                <label for="bank">銀行振込</label>
+            </div>
+
+        </form>
+
         <!--
         確認ボタン
         押したら localStorage に保存して確定画面へ移動します
     -->
-        <div class="definitionButton">
-            <button id="definitionButton">注文を確定する</button>
-        </div>
+            <button class="confirm__button"><a href="definition.html">注文を確定する</a></button>
 
         <footer class="footer">
             <img src="picture/logo.png" class="logo" alt="ロゴ">

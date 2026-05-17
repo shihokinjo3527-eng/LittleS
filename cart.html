@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little S</title>
+    <title>完了画面</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
    <header class="header">
@@ -20,15 +26,20 @@
     </header>
     <main class="cart">
         <h2 class="cart__title">カート</h2>
-        <div class="cart__inner">
-            <img src="" class="cart__img" alt="商品写真">
+        <div class="cart__flex">
+            <div class="cart__inner">
+                <img src="" class="cart__img" alt="商品写真">
+            </div>
+            <div class="cart__total">
+                <h3 class="cart__total2">合計（税込）</h3>
+                <p class="cart__total3">￥</p>
+            </div>
         </div>
-        <div class="cart__total">
-            <h3 class="cart__total2">合計（税込）</h3>
-            <p class="cart__total3">￥</p>
+         <p class="cart__text">税込5,000円以上のご購入で送料無料</p>
+        <div class="cart__button__flex">
+            <p class="cart__button"><a href="index.html">お買い物を続ける</a></p>
+            <p class="cart__next__button"><a href="confirm.html">情報入力へ</a></p>
         </div>
-        <p class="cart__text">税込5,000円以上のご購入で送料無料</p>
-        <p class="cart__button"><a href="#">お買い物を続ける</a></p>
     </main>
     <footer class="footer">
         <img src="" class="logo" alt="ロゴ">
