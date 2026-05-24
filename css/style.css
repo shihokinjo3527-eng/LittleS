@@ -158,6 +158,10 @@ section {
     margin-bottom: 20px;
 }
 
+.product__price {
+    margin-bottom: 20px;
+}
+
 .product__button {
     margin-top: 20px;
 }
@@ -184,6 +188,15 @@ section {
 .swiper-slide img {
     height: auto;
     width: 100%;
+}
+
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+    background: var(--swiper-pagination-bullet-inactive-color, #000);
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
 }
 
 /*ショッピングガイド*/
@@ -416,27 +429,26 @@ section {
 }
 
 .form {
-    margin-bottom: 20px;
+    text-align: center;
 }
 
-#name {
-    border: 1px solid #3f3f3f;
+dt {
+    text-align: left;
 }
 
-#post {
-    border: 1px solid #3f3f3f;
+dd {
+    margin-bottom: 10px;
 }
 
-#address {
-    border: 1px solid #3f3f3f;
+.radio__pay {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
 }
 
-#email {
+.form__box {
     border: 1px solid #3f3f3f;
-}
-
-#tel {
-    border: 1px solid #3f3f3f;
+    padding: 5px;
 }
 
 .confirm__button {
@@ -477,6 +489,7 @@ section {
 .definition__button {
     display: block;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 .definition__button a {
@@ -641,6 +654,10 @@ section {
         right: 0;
     }
 
+    .header__title {
+        padding: 0;
+    }
+
     .header__list {
         list-style: none;
         padding: 60px 20px;
@@ -663,10 +680,24 @@ section {
         color: #007bff;
     }
 
+    section {
+        margin-top: 20px;
+    }
+
 
     .about__inner {
         display: block;
         text-align: center;
+        margin: 0 20px;
+    }
+
+    .about__message {
+        text-align: left;
+        margin-top: 15px;
+    }
+
+    .about__img {
+        width: 80%;
     }
 
     .product__inner {
@@ -683,6 +714,13 @@ section {
 
     .desc {
         margin: 0 auto;
+        width: 100%;
+    }
+
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
     }
 
     .panel-area {
@@ -717,6 +755,9 @@ section {
         margin: 20px;
     }
 
+    .footer__list {
+        display: block;
+    }
 
 
 }

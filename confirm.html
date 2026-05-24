@@ -73,35 +73,56 @@
         <br><br>
 
         <form action="#" method="post" class="form__section">
-            <div class="form">
-                <label class="label" for="name">名前（必須）</label>
-                <input id="name" type="text" name="name">
-            </div>
-            <div class="form">
-                <label class="post" for="number">郵便番号（必須）</label>
-                <input id="post" type="text" name="post">
-            </div>
-            <div class="form">
-                <label class="address" for="address">住所（必須）</label>
-                <input id="address" type="text" name="address">
-            </div>
-            <div class="form">
-                <label class="email" for="email">メールアドレス（必須）</label>
-                <input id="email" type="text" name="email">
-            </div>
-            <div class="form">
-                <label class="tel" for="tel">電話番号</label>
-                <input id="tel" type="text" name="tel">
-            </div>
-            <div class="radiobutton">
-                <p class="radio__title">支払い方法（必須）</p>
-                <input type="radio" id="credit" name="drone" value="credit" checked />
-                <label for="credit">クレジット</label>
-                <input type="radio" id="convenience" name="drone" value="convenience" checked />
-                <label for="convenience">コンビニ支払い</label>
-                <input type="radio" id="bank" name="drone" value="bank" checked />
-                <label for="bank">銀行振込</label>
-            </div>
+            <dl class="form">
+                <dt>
+                    <label class="label" for="name">名前（必須）</label>
+                </dt>
+                <dd>
+                    <input id="name" type="text" name="name" class="form__box">
+                </dd>
+                <dt>
+                    <label class="post" for="number">郵便番号（必須）</label>
+                </dt>
+                <dd>
+                    <input id="post" type="text" name="post" class="form__box">
+                </dd>
+                <dt>
+                    <label class="address" for="address">住所（必須）</label>
+                </dt>
+                <dd>
+                    <input id="address" type="text" name="address" class="form__box">
+                </dd>
+                <dt>
+                    <label class="email" for="email">メールアドレス（必須）</label>
+                </dt>
+                <dd>
+                    <input id="email" type="text" name="email" class="form__box">
+                </dd>
+                <dt>
+                    <label class="tel" for="tel">電話番号</label>
+                </dt>
+                <dd>
+                    <input id="tel" type="text" name="tel" class="form__box">
+                </dd>
+          
+                <dt>
+                    <p class="radio__title">支払い方法（必須）</p>
+                </dt>
+                <div class="radio__pay">
+                    <dd>
+                        <input type="radio" id="credit" name="drone" value="credit" checked />
+                        <label for="credit">クレジット</label>
+                    </dd>
+                    <dd>
+                        <input type="radio" id="convenience" name="drone" value="convenience" checked />
+                        <label for="convenience">コンビニ支払い</label>
+                    </dd>
+                    <dd>
+                        <input type="radio" id="bank" name="drone" value="bank" checked />
+                        <label for="bank">銀行振込</label>
+                    </dd>
+                </div>
+            </dl>
 
         </form>
 
