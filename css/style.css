@@ -451,6 +451,15 @@ dd {
     padding: 5px;
 }
 
+.inform {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.inform__text {
+    gap: 5px;
+}
+
 .confirm__button {
     display: block;
     margin: 0 auto;
