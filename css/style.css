@@ -191,8 +191,8 @@ section {
 }
 
 .swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
+    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 30px));
+    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 30px));
     display: inline-block;
     border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
     background: var(--swiper-pagination-bullet-inactive-color, #000);
@@ -384,7 +384,7 @@ section {
 }
 
 .logo {
-    width: 100px;
+    width: 120px;
     margin-right: 50px;
 }
 
@@ -408,6 +408,10 @@ section {
 
 /*商品確認画面*/
 
+.confirm__title {
+    margin-top: 30px;
+}
+
 .confirm__p {
     text-align: center;
     gap: 10px;
@@ -425,7 +429,6 @@ section {
 .form__section {
     width: 50%;
     margin: 0 auto;
-    padding: 30px;
 }
 
 .form {
@@ -437,18 +440,19 @@ dt {
 }
 
 dd {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .radio__pay {
     display: flex;
-    justify-content: end;
     gap: 10px;
+    margin-left: 30%;
 }
 
 .form__box {
     border: 1px solid #3f3f3f;
     padding: 5px;
+    width: 70%;
 }
 
 .inform {
@@ -488,6 +492,10 @@ dd {
 .definition__h2 {
     text-align: center;
     margin: 50px;
+}
+
+.s__definition__h2 {
+    display: none;
 }
 
 .definition__p {
@@ -709,8 +717,18 @@ dd {
         width: 80%;
     }
 
+    .product__name {
+        margin: 20px 0;
+    }
+
     .product__inner {
         display: none;
+    }
+
+    .box-active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .s__product__inner {
@@ -766,6 +784,64 @@ dd {
 
     .footer__list {
         display: block;
+    }
+
+
+    /*カート画面*/
+
+    .header__title {
+        padding: 0;
+        text-align: center;
+    }
+
+    .cart__button__flex {
+        display: block;
+    }
+
+    .cart__flex {
+        display: block;
+        text-align: center;
+    }
+
+    .cart__text {
+        margin-bottom: 30px;
+        font-size: 15px;
+    }
+
+    .cart__button a {
+        width: 70%;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+    }
+
+    .cart__next__button a {
+        width: 70%;
+        padding: 10px 20px;
+    }
+
+    /*完了画面*/
+
+    .definition__h2 {
+        display: none;
+    }
+
+    .s__definition__h2 {
+        display: block;
+        text-align: center;
+        margin: 50px;
+        font-size: 30px;
+    }
+
+    /*商品確認画面*/
+
+    .radio__pay {
+        display: block;
+        margin-right: 3%;
+        margin-left: 0;
+    }
+
+    .inform__text {
+        font-size: 15px;
     }
 
 

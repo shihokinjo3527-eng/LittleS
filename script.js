@@ -52,3 +52,23 @@ $(function() {
     });
   });
 });
+
+//フェードイン
+$(function() {
+  // スクロールイベント
+  $(window).scroll(function() {
+    // スクロール量を取得
+    const scroll = $(window).scrollTop();
+    // 画面の高さを取得
+    const windowHeight = $(window).height();
+
+    $(".s__box").each(function() {
+      // それぞれの.boxまでの高さを取得
+      const boxHeight = $(this).offset().top;
+      // 条件式に合致する場合はis-activeを付与
+      if(scroll + windowHeight > boxHeight) {
+        $(this).addClass("box-active");
+      }
+    });
+  });
+});
