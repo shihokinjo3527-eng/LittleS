@@ -79,31 +79,31 @@
                     <label class="label" for="name">名前（必須）</label>
                 </dt>
                 <dd>
-                    <input id="name" type="text" name="name" class="form__box">
+                    <input id="name" type="text" name="name" class="form__box" required>
                 </dd>
                 <dt>
-                    <label class="post" for="number">郵便番号（必須）</label>
+                    <label class="post" for="post">郵便番号（必須）</label>
                 </dt>
                 <dd>
-                    <input id="post" type="text" name="post" class="form__box">
+                    <input id="post" type="text" name="post" class="form__box" required>
                 </dd>
                 <dt>
                     <label class="address" for="address">住所（必須）</label>
                 </dt>
                 <dd>
-                    <input id="address" type="text" name="address" class="form__box">
+                    <input id="address" type="text" name="address" class="form__box" required>
                 </dd>
                 <dt>
                     <label class="email" for="email">メールアドレス（必須）</label>
                 </dt>
                 <dd>
-                    <input id="email" type="text" name="email" class="form__box">
+                    <input id="email" type="tel" name="email" class="form__box" required>
                 </dd>
                 <dt>
                     <label class="tel" for="tel">電話番号</label>
                 </dt>
                 <dd>
-                    <input id="tel" type="text" name="tel" class="form__box">
+                    <input id="tel" type="text" name="tel" class="form__box" required>
                 </dd>
           
                 <dt>
@@ -111,15 +111,15 @@
                 </dt>
                 <div class="radio__pay">
                     <dd>
-                        <input type="radio" id="credit" name="drone" value="credit" checked />
+                        <input type="radio" id="credit" name="payment" value="credit" checked />
                         <label for="credit">クレジット</label>
                     </dd>
                     <dd>
-                        <input type="radio" id="convenience" name="drone" value="convenience" checked />
+                        <input type="radio" id="convenience" name="payment" value="convenience" />
                         <label for="convenience">コンビニ支払い</label>
                     </dd>
                     <dd>
-                        <input type="radio" id="bank" name="drone" value="bank" checked />
+                        <input type="radio" id="bank" name="payment" value="bank" />
                         <label for="bank">銀行振込</label>
                     </dd>
                 </div>
@@ -135,7 +135,7 @@
         確認ボタン
         押したら localStorage に保存して確定画面へ移動します
     -->
-            <button class="confirm__button"><a href="definition.html">注文を確定する</a></button>
+            <button class="confirm__button">注文を確定する</button>
 
         <footer class="footer">
             <img src="picture/logo.png" class="logo" alt="ロゴ">
