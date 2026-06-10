@@ -88,6 +88,10 @@ section {
     width: 100%;
 }
 
+.container {
+    display: none;
+}
+
 /*アバウト*/
 #about {
     background-color: #87C0CA;
@@ -466,11 +470,6 @@ dd {
 .confirm__button {
     display: block;
     margin: 0 auto;
-}
-
-.confirm__button a {
-    display: block;
-    margin: 0 auto;
     text-align: center;
     margin-bottom: 30px;
     color: #F7F3ED;
@@ -480,7 +479,7 @@ dd {
     border: transparent 2px solid;
 }
 
-.confirm__button a:hover {
+.confirm__button:hover {
     background: #F7F3ED;
     color: #EF8D1E;
     border: 2px solid #EF8D1E;
@@ -696,6 +695,40 @@ dd {
         color: #007bff;
     }
 
+    .main__img {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+
+    .slider-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .slider-image {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+    }
+
+    img {
+        width: 0;
+    }
+
+    .active {
+        width: 80%;
+    }
+
+
     section {
         margin-top: 80px;
     }
@@ -864,7 +897,7 @@ dd {
     }
 
     .form__section {
-        margin: 10px;
+        padding: 0 10px;
         width: 100%;
     }
 
