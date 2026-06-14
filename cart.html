@@ -32,6 +32,12 @@
             </div>
             <div class="cart__total">
                 <p>商品名: <span id="productName"></span></p>
+                <p>
+                    数量:
+                    <span id="quantity"></span>
+                    <button id="plusButton">+</button>
+                    <button id="minusButton">-</button>
+                </p>
                 <p class="cart__total2">合計（税込）</p>
                 <p class="cart__total3">￥ <span id="totalPrice"></span></p>
             </div>
@@ -58,9 +64,6 @@
         // 1. HTMLの要素を取得する
         // -----------------------------------
         // 画面に値を表示するために、spanタグやbuttonタグを取得しています。
-
-        // 商品IDを表示する span
-        const productIdSpan = document.getElementById("productId");
 
         // 商品名を表示する span
         const productNameSpan = document.getElementById("productName");
@@ -96,18 +99,18 @@
         // 最初のサンプルデータを保存します。
         //
         // すでに保存済みであれば、この処理は実行されません。
-        if (!localStorage.getItem(STORAGE_KEY)) {
-            const defaultProduct = {
-                productId: "P001",
-                productName: "ノートパソコン",
-                price: 5000,
-                quantity: 2
-            };
+        //  if (!localStorage.getItem(STORAGE_KEY)) {
+        //     const defaultProduct = {
+        //         productId: "P001",
+        //         productName: "ノートパソコン",
+        //         price: 5000,
+        //         quantity: 2
+        //     };
 
-            // localStorage には文字列しか保存できないので
-            // JSON.stringify() で文字列に変換して保存します
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProduct));
-        }
+        //     // localStorage には文字列しか保存できないので
+        //     // JSON.stringify() で文字列に変換して保存します
+        //     localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProduct));
+        // }
 
 
         // -----------------------------------
@@ -140,8 +143,8 @@
             // 最新のデータを localStorage から取得する
             const productData = getProductData();
 
-            // 商品IDを画面に表示
-            productIdSpan.textContent = productData.productId;
+            // 商品画像を画面に表示
+            document.getElementById("productImage").src = productData.image;
 
             // 商品名を画面に表示
             productNameSpan.textContent = productData.productName;

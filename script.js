@@ -1,3 +1,102 @@
+
+// -----------------------------------
+// 1. HTML要素を取得する
+// -----------------------------------
+// const productIdSpan = document.getElementById("productId");
+// const productNameSpan = document.getElementById("productName");
+// const priceSpan = document.getElementById("price");
+// const quantityInput = document.getElementById("quantity");
+const buyButton = document.getElementById("buyButton");
+const result = document.getElementById("result");
+
+// -----------------------------------
+// 2. localStorage に保存するときのキー名
+// -----------------------------------
+const STORAGE_KEY = "goodsOrder";
+
+// -----------------------------------
+// 3. JSONから読み込んだ商品情報を入れておく変数(ここまではやる)
+// -----------------------------------
+let productDataFromJson = null;
+
+// -----------------------------------
+// 4. JSONファイルを読み込む（丸コピー）
+// -----------------------------------
+// goods.json を fetch で取得します
+fetch("goods.json")
+    .then(function (response) {
+        // ファイルの取得に失敗した場合
+        if (!response.ok) {
+            throw new Error("JSONファイルの読み込みに失敗しました");
+        }
+
+        // JSON形式として読み込む
+        return response.json();
+    })
+    .then(function (products) {
+        // 今回は1件目の商品を使う
+        const product = products[1];
+
+        // 読み込んだ商品情報を変数に保存しておく
+        productDataFromJson = product;
+
+        // 画面に商品情報を表示する
+        productIdSpan.textContent = product.productId;
+        productNameSpan.textContent = product.productName;
+        priceSpan.textContent = product.price;
+    })
+    .catch(function (error) {
+        console.error(error);
+        result.textContent = "商品情報の読み込みに失敗しました";
+    });
+
+// -----------------------------------
+// 5. 購入ボタンが押されたときの処理
+// -----------------------------------
+buyButton.addEventListener("click", function () {
+    // JSONの読み込みがまだ終わっていない場合
+    if (!productDataFromJson) {
+        result.textContent = "商品情報をまだ読み込み中です";
+        return;
+    }
+
+    // 入力された個数を取得する
+    const quantity = quantityInput.value;
+
+    // -----------------------------------
+    // 6. 入力チェック
+    // -----------------------------------
+    if (quantity === "" || Number(quantity) <= 0) {
+        result.textContent = "1以上の個数を入力してください";
+        return;
+    }
+
+    // -----------------------------------
+    // 7. localStorage に保存するデータを作る
+    // -----------------------------------
+    const goodsOrder = {
+        productId: productDataFromJson.productId,
+        productName: productDataFromJson.productName,
+        price: productDataFromJson.price,
+        quantity: Number(quantity)
+    };
+
+    // -----------------------------------
+    // 8. localStorage に保存する
+    // -----------------------------------
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(goodsOrder));
+
+    // 保存できたことを画面に表示
+    result.textContent = "保存しました: " + JSON.stringify(goodsOrder);
+
+    // -----------------------------------
+    // 9. カート画面へ移動する
+    // -----------------------------------
+    window.location.href = "sample_cart.html";
+});
+
+
+
 //アコーディオン
 $('.accordion-header').click(function() {
   $(this).next().slideToggle();
@@ -71,4 +170,29 @@ $(function() {
       }
     });
   });
+});
+
+
+$(function(){
+
+   var $setElm = $('.container'),
+    fadeSpeed = 1500,
+    switchDelay = 5000;
+
+    $setElm.each(function(){
+      var targetObj = $(this);
+      var findUl = targetObj.find('.slider-image__wrapper');
+      var findLi = targetObj.find('.slider-image');
+      var findLiFirst = targetObj.find('.slider-image:first');
+
+      findLi.css({display:'block',opacity:'0',zIndex:'99'});
+      findLiFirst.css({zIndex:'100'}).stop().animate({opacity:'1'},fadeSpeed);
+        setInterval(function(){
+
+          findUl.find('.slider-image:first-child').animate({opacity:'0'},fadeSpeed).next('.slider-image').css({zIndex:'100'}).animate({opacity:'1'},fadeSpeed).end().appendTo(findUl).css({zIndex:'99'});
+
+        },switchDelay);
+
+    });
+
 });
