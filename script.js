@@ -6,7 +6,7 @@
 // const productNameSpan = document.getElementById("productName");
 // const priceSpan = document.getElementById("price");
 // const quantityInput = document.getElementById("quantity");
-const buyButton = document.getElementById("buyButton");
+const buyButton = document.querySelectorAll(".product__button");
 const result = document.getElementById("result");
 
 // -----------------------------------
@@ -92,7 +92,7 @@ buyButton.addEventListener("click", function () {
     // -----------------------------------
     // 9. カート画面へ移動する
     // -----------------------------------
-    window.location.href = "sample_cart.html";
+    window.location.href = "cart.html";
 });
 
 
