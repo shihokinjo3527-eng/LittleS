@@ -6,7 +6,7 @@
 // const productNameSpan = document.getElementById("productName");
 // const priceSpan = document.getElementById("price");
 // const quantityInput = document.getElementById("quantity");
-const buyButton = document.querySelectorAll(".product__button");
+const buyButton = document.querySelectorAll(".productImage");
 const result = document.getElementById("result");
 
 // -----------------------------------
@@ -35,10 +35,10 @@ fetch("goods.json")
     })
     .then(function (products) {
         // 今回は1件目の商品を使う
-        const product = products[1];
+        const product = products[0,1];
 
         // 読み込んだ商品情報を変数に保存しておく
-        productDataFromJson = product;
+        productDataFromJson = products;
 
         // 画面に商品情報を表示する
         productIdSpan.textContent = product.productId;
@@ -53,7 +53,7 @@ fetch("goods.json")
 // -----------------------------------
 // 5. 購入ボタンが押されたときの処理
 // -----------------------------------
-buyButton.addEventListener("click", function () {
+buyButton.forEach(button => {button.addEventListener("click", function () {
     // JSONの読み込みがまだ終わっていない場合
     if (!productDataFromJson) {
         result.textContent = "商品情報をまだ読み込み中です";
@@ -70,6 +70,9 @@ buyButton.addEventListener("click", function () {
         result.textContent = "1以上の個数を入力してください";
         return;
     }
+
+    const index = this.getAttribute("data-index");
+    const selectedProduct = productDataFromJson[index];
 
     // -----------------------------------
     // 7. localStorage に保存するデータを作る
@@ -93,6 +96,7 @@ buyButton.addEventListener("click", function () {
     // 9. カート画面へ移動する
     // -----------------------------------
     window.location.href = "cart.html";
+});
 });
 
 

@@ -56,7 +56,7 @@
         <!--
         JSONから読み込んだ価格を表示する場所
     -->
-        <p class="confirm__p">価格: <span id="price"></span>円</p>
+        <p class="confirm__p">価格: ￥<span id="price"></span></p>
 
         <!--
         個数入力欄
@@ -188,18 +188,18 @@
         // 最初のサンプルデータを保存します。
         //
         // すでに保存済みであれば、この処理は実行されません。
-        if (!localStorage.getItem(STORAGE_KEY)) {
-            const defaultProduct = {
-                productId: "P001",
-                productName: "ノートパソコン",
-                price: 5000,
-                quantity: 2
-            };
+        // if (!localStorage.getItem(STORAGE_KEY)) {
+        //     const defaultProduct = {
+        //         productId: "P001",
+        //         productName: "ノートパソコン",
+        //         price: 5000,
+        //         quantity: 2
+        //     };
 
-            // localStorage には文字列しか保存できないので
-            // JSON.stringify() で文字列に変換して保存します
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProduct));
-        }
+        //     // localStorage には文字列しか保存できないので
+        //     // JSON.stringify() で文字列に変換して保存します
+        //     localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProduct));
+        // }
 
 
         // -----------------------------------
