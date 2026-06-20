@@ -2,9 +2,9 @@
 // -----------------------------------
 // 1. HTML要素を取得する
 // -----------------------------------
-// const productIdSpan = document.getElementById("productId");
-// const productNameSpan = document.getElementById("productName");
-// const priceSpan = document.getElementById("price");
+const productIdSpan = document.getElementById("productId");
+const productNameSpan = document.getElementById("productName");
+const priceSpan = document.getElementById("price");
 // const quantityInput = document.getElementById("quantity");
 const buyButton = document.querySelectorAll(".productImage");
 const result = document.getElementById("result");
@@ -41,9 +41,9 @@ fetch("goods.json")
         productDataFromJson = products;
 
         // 画面に商品情報を表示する
-        productIdSpan.textContent = product.productId;
-        productNameSpan.textContent = product.productName;
-        priceSpan.textContent = product.price;
+        // productIdSpan.textContent = product.productId;
+        // productNameSpan.textContent = product.productName;
+        // priceSpan.textContent = product.price;
     })
     .catch(function (error) {
         console.error(error);
@@ -61,15 +61,15 @@ buyButton.forEach(button => {button.addEventListener("click", function () {
     }
 
     // 入力された個数を取得する
-    const quantity = quantityInput.value;
+    // const quantity = quantityInput.value;
 
     // -----------------------------------
     // 6. 入力チェック
     // -----------------------------------
-    if (quantity === "" || Number(quantity) <= 0) {
-        result.textContent = "1以上の個数を入力してください";
-        return;
-    }
+    // if (quantity === "" || Number(quantity) <= 0) {
+    //     result.textContent = "1以上の個数を入力してください";
+    //     return;
+    // }
 
     const index = this.getAttribute("data-index");
     const selectedProduct = productDataFromJson[index];
@@ -78,10 +78,11 @@ buyButton.forEach(button => {button.addEventListener("click", function () {
     // 7. localStorage に保存するデータを作る
     // -----------------------------------
     const goodsOrder = {
-        productId: productDataFromJson.productId,
-        productName: productDataFromJson.productName,
-        price: productDataFromJson.price,
-        quantity: Number(quantity)
+      productId: selectedProduct.productId,
+      productName: selectedProduct.productName,
+      price: selectedProduct.price,
+      image: selectedProduct.image,
+      quantity: 1
     };
 
     // -----------------------------------
@@ -90,7 +91,7 @@ buyButton.forEach(button => {button.addEventListener("click", function () {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(goodsOrder));
 
     // 保存できたことを画面に表示
-    result.textContent = "保存しました: " + JSON.stringify(goodsOrder);
+    //result.textContent = "保存しました: " + JSON.stringify(goodsOrder);
 
     // -----------------------------------
     // 9. カート画面へ移動する
@@ -119,7 +120,7 @@ $(function(){
 
 //スワイパー
 const swiper = new Swiper(".swiper", {
-  loop: true,
+  loop: false,
   // ページネーション
   pagination: {
     el: ".swiper-pagination",
