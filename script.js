@@ -2,9 +2,9 @@
 // -----------------------------------
 // 1. HTML要素を取得する
 // -----------------------------------
-const productIdSpan = document.getElementById("productId");
-const productNameSpan = document.getElementById("productName");
-const priceSpan = document.getElementById("price");
+//const productIdSpan = document.getElementById("productId");
+//const productNameSpan = document.getElementById("productName");
+//const priceSpan = document.getElementById("price");
 // const quantityInput = document.getElementById("quantity");
 const buyButton = document.querySelectorAll(".productImage");
 const result = document.getElementById("result");
