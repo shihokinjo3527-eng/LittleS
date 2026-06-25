@@ -37,7 +37,7 @@ section {
 }
 
 .header__title {
-    font-family: "Pinyon Script", cursive;
+    font-family: "Albert Sans", cursive;
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
@@ -421,6 +421,12 @@ section {
     gap: 10px;
 }
 
+#checkoutImg {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
 .quantity {
     text-align: center;
 }
@@ -433,6 +439,7 @@ section {
 .form__section {
     width: 50%;
     margin: 0 auto;
+    margin-top: 70px;
 }
 
 .form {
@@ -534,9 +541,15 @@ dd {
 
 .cart__flex {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 50px;
 }
+
+.cart__total {
+    margin-left: 30px;
+    text-align: center;
+}
+
 
 .cart__text {
     text-align: center;
@@ -548,25 +561,44 @@ dd {
     margin: 50px;
 }
 
+
 #plusButton {
     background-color: #F7F3ED;
-    color: #3f3f3f;
+    color: #EF8D1E;
     max-width: 80px;
     width: 100%;
     padding: 2px;
-    margin-bottom: 10px;
-    border: 2px solid #3f3f3f;
+    gap: 10px;
+    border: 2px solid #EF8D1E;
     display: block;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+#plusButton:hover {
+    background: #EF8D1E;
+    color: #F7F3ED;
+    border: 2px solid #F7F3ED;
+    border-radius: 50%;
 }
 
 #minusButton {
-    color: #3f3f3f;
+    color: #EF8D1E;
     max-width: 80px;
     width: 100%;
     padding: 2px;
     margin-bottom: 10px;
-    border: 2px solid #3f3f3f;
+    border: 2px solid #EF8D1E;
     display: block;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+#minusButton:hover {
+    background: #EF8D1E;
+    color: #F7F3ED;
+    border: 2px solid #F7F3ED;
+    border-radius: 50%;
 }
 
 .cart__button__flex {
