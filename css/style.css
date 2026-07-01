@@ -135,7 +135,7 @@ section {
 .desc__flex {
     display: flex;
     align-items: center;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
     justify-content: center;
 }
 
@@ -418,6 +418,12 @@ section {
 
 .confirm__flex {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm__wrapper {
+    padding: 20px;
 }
 
 .confirm__p {
@@ -550,7 +556,9 @@ dd {
 }
 
 .total__p {
+    padding: 5px;
     margin-bottom: 10px;
+    text-align: end;
 }
 
 .cart__total {
@@ -608,9 +616,16 @@ dd {
     border: 2px solid #F7F3ED;
 }
 
+.total__wrapper {
+    background-color: #FFF;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
 .quantity__flex {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .cart__button__flex {
