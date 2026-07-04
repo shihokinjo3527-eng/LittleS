@@ -27,28 +27,30 @@
     </header>
     <main class="cart">
         <h2 class="cart__title">カート</h2>
-        <div class="cart__flex">
-            <div class="cart__inner">
-                 <img id="productImage" alt="カートに入れた商品の写真" style="max-width: 300px;" src="">
-            </div>
-            <div class="cart__total">
-                <p class="total__p">商品名: <span id="productName"></span></p>
-                <p class="total__p">単価：￥<span id="price"></span></p>
-                <div class="quantity__flex">
-                    <p class="total__p quantity__p">
-                        数量:
-                        <span id="quantity"></span>
-                    </p>
-                    <div class="quantity__button">
-                        <button id="plusButton">+</button>
-                        <button id="minusButton">-</button>
+        <div class="cart__wrapper">
+            <div class="cart__flex">
+                <div class="cart__inner">
+                    <img id="productImage" alt="カートに入れた商品の写真" style="max-width: 300px;" src="">
+                </div>
+                <div class="cart__total">
+                    <p class="total__p">商品名: <span id="productName"></span></p>
+                    <p class="total__p">単価：￥<span id="price"></span></p>
+                    <div class="quantity__flex">
+                        <p class="total__p quantity__p">
+                            数量:
+                            <span id="quantity"></span>
+                        </p>
+                        <div class="quantity__button">
+                            <button id="plusButton">-</button>
+                            <button id="minusButton">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="total__wrapper">
-            <p class="cart__total2 total__p">合計（税込）</p>
-            <p class="cart__total3 total__p">￥ <span id="totalPrice"></span></p>
+            <p class="cart__total2 total__bold">合計<span class="total__thin">（税込）</span></p>
+            <p class="cart__total3 total__bold">￥ <span id="totalPrice"></span></p>
         </div>    
             <p class="cart__text">税込5,000円以上のご購入で送料無料</p>
         <div class="cart__button__flex">

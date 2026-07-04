@@ -385,6 +385,7 @@ section {
     padding: 50px;
     justify-content: center;
     background-color: #F8CA12;
+    align-items: center;
 }
 
 .logo {
@@ -399,7 +400,7 @@ section {
 }
 
 .footer__item {
-    margin: 50px;
+    margin: 0 15px;
 }
 
 .footer__item a {
@@ -412,6 +413,47 @@ section {
 
 /*商品確認画面*/
 
+.confirm__data {
+    margin-bottom: 50px;
+}
+
+.confirm__product {
+    display: flex;
+    justify-content: center;
+    background-color: #FFF;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 60%;
+    align-items: center;
+}
+
+.confirm__inner {
+    margin-bottom: 30px;
+}
+
+.confirm__wrapper {
+    margin-left: 30px;
+    background-color: #FFF;
+    padding: 20px;
+}
+
+#checkoutImg {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+.confirm__wrapper {
+    padding: 0;
+}
+
+.confirm__p {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 .confirm__title {
     margin-top: 30px;
 }
@@ -422,20 +464,6 @@ section {
     align-items: center;
 }
 
-.confirm__wrapper {
-    padding: 20px;
-}
-
-.confirm__p {
-    text-align: center;
-    gap: 10px;
-}
-
-#checkoutImg {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 10px;
-}
 
 .quantity {
     text-align: center;
@@ -549,10 +577,17 @@ dd {
 
 /*カート画面*/
 
+.cart__wrapper {
+    margin-bottom: 50px;
+}
+
 .cart__flex {
     display: flex;
     justify-content: center;
-    margin: 50px;
+    background-color: #FFF;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 60%;
 }
 
 .total__p {
@@ -616,11 +651,29 @@ dd {
     border: 2px solid #F7F3ED;
 }
 
+
 .total__wrapper {
-    background-color: #FFF;
     max-width: 50%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
+
+
+.total__bold {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.total__thin {
+    font-size: 25px;
+}
+
+.cart__total3 {
+    color: #EF8D1E;
+}
+
 
 .quantity__flex {
     display: flex;
@@ -939,6 +992,7 @@ dd {
         text-align: center;
     }
 
+
     .cart__button__flex {
         display: block;
     }
@@ -946,6 +1000,10 @@ dd {
     .cart__flex {
         display: block;
         text-align: center;
+    }
+
+    .cart__total {
+        margin-left: 0px;
     }
 
     .cart__text {
@@ -988,11 +1046,12 @@ dd {
 
     /*商品確認画面*/
 
-    .radio__pay {
+
+
+    .confirm__flex {
         display: block;
-        margin-right: 3%;
-        margin-left: 0;
     }
+
 
     .inform__text {
         font-size: 15px;
@@ -1005,6 +1064,18 @@ dd {
 
     .form__box {
         width: 100%;
+    }
+
+
+    .radio__pay {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .radio__pay label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
 

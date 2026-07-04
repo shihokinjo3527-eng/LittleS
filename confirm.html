@@ -1,147 +1,317 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>確認画面</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Pinyon+Script&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-        <link rel="icon" href="picture/icon.svg">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>確認画面</title>
 
-    <body>
-        <header class="header">
-            <div class="header__top">
-                <h1 class="header__title">Little S</h1>
-            </div>
-            <div class="header__wrapper">
-                <input type="checkbox" id="menu-toggle" hidden>
-                <label class="menu-icon" for="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-                <div class="overlay"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        <li class="header__item"><a href="index.html">Home</a></li>
-                        <li class="header__item"><a href="index.html#about">About</a></li>
-                        <li class="header__item"><a href="index.html#product">Product</a></li>
-                        <li class="header__item"><a href="index.html#shopping__guide">Shopping Guide</a></li>
-                        <li class="header__item"><a href="index.html#faq">FAQ</a></li>
-                        <li class="header__item header__cart"><a href="cart.html"><img src="picture/cart.png" alt="カート"></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Pinyon+Script&display=swap"
+        rel="stylesheet">
 
-        <h2 class="confirm__title">確認画面</h2>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 
-        <div class="confirm__flex">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="icon" href="picture/icon.svg">
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header class="header">
+
+        <div class="header__top">
+            <h1 class="header__title">Little S</h1>
+        </div>
+
+        <div class="header__wrapper">
+
+            <input type="checkbox" id="menu-toggle" hidden>
+
+            <label class="menu-icon" for="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="overlay"></div>
+
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a href="index.html#about">About</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a href="index.html#product">Product</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a href="index.html#shopping__guide">Shopping Guide</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a href="index.html#faq">FAQ</a>
+                    </li>
+
+                    <li class="header__item header__cart">
+                        <a href="cart.html">
+                            <img src="picture/cart.png" alt="カート">
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <h2 class="confirm__title">確認画面</h2>
+
+    <!-- 商品表示 -->
+     <div class="confirm__data">
+        <div class="confirm__product">
             <div class="confirm__inner">
-                <img id="checkoutImg" alt="カートに入れた商品の写真" style="max-width: 300px;" src="">
+                <img id="checkoutImg"
+                    src=""
+                    alt="カートに入れた商品の写真">
             </div>
 
             <div class="confirm__wrapper">
-                <p class="confirm__p">商品名: <span id="checkoutName"></span></p>
 
-                <p class="confirm__p">個数: <span id="checkoutQty"></span></p>
+                <p class="confirm__p">
+                    商品名：
+                    <span id="checkoutName"></span>
+                </p>
 
-                <p class="confirm__p">価格: ￥<span id="checkoutPrice"></span></p>
+                <p class="confirm__p">
+                    個数：
+                    <span id="checkoutQty"></span>
+                </p>
+
+                <p class="confirm__p">
+                    価格：
+                    ￥<span id="checkoutPrice"></span>
+                </p>
             </div>
-
         </div>
-        <form action="#" method="post" class="form__section">
-            <dl class="form">
-                <dt>
-                    <label class="label" for="name">名前（必須）</label>
-                </dt>
-                <dd>
-                    <input id="name" type="text" name="name" class="form__box" required>
-                </dd>
-                <dt>
-                    <label class="post" for="post">郵便番号（必須）</label>
-                </dt>
-                <dd>
-                    <input id="post" type="text" name="post" class="form__box" required>
-                </dd>
-                <dt>
-                    <label class="address" for="address">住所（必須）</label>
-                </dt>
-                <dd>
-                    <input id="address" type="text" name="address" class="form__box" required>
-                </dd>
-                <dt>
-                    <label class="email" for="email">メールアドレス（必須）</label>
-                </dt>
-                <dd>
-                    <input id="email" type="tel" name="email" class="form__box" required>
-                </dd>
-                <dt>
-                    <label class="tel" for="tel">電話番号</label>
-                </dt>
-                <dd>
-                    <input id="tel" type="text" name="tel" class="form__box" required>
-                </dd>
-          
-                <dt>
-                    <p class="radio__title">支払い方法（必須）</p>
-                </dt>
-                <div class="radio__pay">
-                    <dd>
-                        <input type="radio" id="credit" name="payment" value="credit" checked />
-                        <label for="credit">クレジット</label>
-                    </dd>
-                    <dd>
-                        <input type="radio" id="convenience" name="payment" value="convenience" />
-                        <label for="convenience">コンビニ支払い</label>
-                    </dd>
-                    <dd>
-                        <input type="radio" id="bank" name="payment" value="bank" />
-                        <label for="bank">銀行振込</label>
-                    </dd>
-                </div>
-            </dl>
+    </div>
 
-        </form>
+    <!-- フォーム -->
+    <form action="#" method="post" class="form__section">
 
-        <div class="inform">
-            <p class="inform__text">商品はご注文確認後、通常1〜3営業日以内に発送いたします。<br>発送完了後、メールにてご案内いたします。</p>
-        </div>
+        <dl class="form">
 
-        <!--
-        確認ボタン
-        押したら localStorage に保存して確定画面へ移動します
-    -->
-            <p class="confirm__button__wrapper"><a href="definition.html" class="confirm__button">注文を確定する</a></p>
+            <dt>
+                <label for="name">
+                    名前（必須）
+                </label>
+            </dt>
 
-        <footer class="footer">
-            <img src="picture/logo.png" class="logo" alt="ロゴ">
-            <ul class="footer__list">
-                    <li class="footer__item"><a href="index.html">Home</a></li>
-                    <li class="footer__item"><a href="index.html#about">About</a></li>
-                    <li class="footer__item"><a href="index.html#product">Product</a></li>
-                    <li class="footer__item"><a href="index.html#shopping__guide">Shopping Guide</a></li>
-                    <li class="footer__item"><a href="index.html#faq">FAQ</a></li>
-                </ul>
-        </footer>
-        <script>
-            const STORAGE_KEY = "goodsOrder";
-            const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
-            if (data) {
-                document.getElementById("checkoutImg").src = data.image;
-                document.getElementById("checkoutName").textContent = data.productName;
-                document.getElementById("checkoutQty").textContent = data.quantity;
-                document.getElementById("checkoutPrice").textContent = data.price * data.quantity;
-            }
-        </script>
-        
-    </body>
+            <dd>
+                <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    class="form__box"
+                    required>
+            </dd>
+
+            <dt>
+                <label for="post">
+                    郵便番号（必須）
+                </label>
+            </dt>
+
+            <dd>
+                <input
+                    id="post"
+                    type="text"
+                    name="post"
+                    class="form__box"
+                    required>
+            </dd>
+
+            <dt>
+                <label for="address">
+                    住所（必須）
+                </label>
+            </dt>
+
+            <dd>
+                <input
+                    id="address"
+                    type="text"
+                    name="address"
+                    class="form__box"
+                    required>
+            </dd>
+
+            <dt>
+                <label for="email">
+                    メールアドレス（必須）
+                </label>
+            </dt>
+
+            <dd>
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    class="form__box"
+                    required>
+            </dd>
+
+            <dt>
+                <label for="tel">
+                    電話番号
+                </label>
+            </dt>
+
+            <dd>
+                <input
+                    id="tel"
+                    type="tel"
+                    name="tel"
+                    class="form__box">
+            </dd>
+
+            <dt>
+                <p class="radio__title">
+                    支払い方法（必須）
+                </p>
+            </dt>
+
+            <dd class="radio__pay">
+
+                <label for="credit">
+                    <input
+                        type="radio"
+                        id="credit"
+                        name="payment"
+                        value="credit"
+                        checked>
+
+                    クレジット
+                </label>
+
+            </dd>
+
+            <dd class="radio__pay">
+
+                <label for="convenience">
+                    <input
+                        type="radio"
+                        id="convenience"
+                        name="payment"
+                        value="convenience">
+
+                    コンビニ支払い
+                </label>
+
+            </dd>
+
+            <dd class="radio__pay">
+
+                <label for="bank">
+                    <input
+                        type="radio"
+                        id="bank"
+                        name="payment"
+                        value="bank">
+
+                    銀行振込
+                </label>
+
+            </dd>
+
+        </dl>
+
+    </form>
+
+    <div class="inform">
+
+        <p class="inform__text">
+            商品はご注文確認後、通常1〜3営業日以内に発送いたします。<br>
+            発送完了後、メールにてご案内いたします。
+        </p>
+
+    </div>
+
+    <p class="confirm__button__wrapper">
+        <a
+            href="definition.html"
+            class="confirm__button">
+            注文を確定する
+        </a>
+    </p>
+
+    <!-- フッター -->
+    <footer class="footer">
+
+        <img
+            src="picture/logo.png"
+            class="logo"
+            alt="ロゴ">
+
+        <ul class="footer__list">
+
+            <li class="footer__item">
+                <a href="index.html">Home</a>
+            </li>
+
+            <li class="footer__item">
+                <a href="index.html#about">About</a>
+            </li>
+
+            <li class="footer__item">
+                <a href="index.html#product">Product</a>
+            </li>
+
+            <li class="footer__item">
+                <a href="index.html#shopping__guide">Shopping Guide</a>
+            </li>
+
+            <li class="footer__item">
+                <a href="index.html#faq">FAQ</a>
+            </li>
+
+        </ul>
+
+    </footer>
+
+    <script>
+
+        const STORAGE_KEY = "goodsOrder";
+
+        const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+        if (data) {
+
+            document.getElementById("checkoutImg").src = data.image;
+
+            document.getElementById("checkoutName").textContent = data.productName;
+
+            document.getElementById("checkoutQty").textContent = data.quantity;
+
+            document.getElementById("checkoutPrice").textContent =
+                (data.price * data.quantity).toLocaleString();
+
+        }
+
+    </script>
+
+</body>
 
 </html>
