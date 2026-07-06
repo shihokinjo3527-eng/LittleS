@@ -181,8 +181,8 @@ $(function() {
 $(function(){
 
    var $setElm = $('.container'),
-    fadeSpeed = 1500,
-    switchDelay = 5000;
+    fadeSpeed = 500,
+    switchDelay = 2000;
 
     $setElm.each(function(){
       var targetObj = $(this);
