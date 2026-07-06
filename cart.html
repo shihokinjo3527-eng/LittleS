@@ -52,7 +52,7 @@
             <p class="cart__total2 total__bold">合計<span class="total__thin">（税込）</span></p>
             <p class="cart__total3 total__bold">￥ <span id="totalPrice"></span></p>
         </div>    
-            <p class="cart__text">税込5,000円以上のご購入で送料無料</p>
+            <p class="cart__text">あと<span id="uptofree"></span>円のご購入で送料無料</p>
         <div class="cart__button__flex">
             <p class="cart__next__button"><a href="confirm.html">情報入力へ</a></p>
         </div>
@@ -87,6 +87,9 @@
         // 合計金額を表示する span
         const totalPriceSpan = document.getElementById("totalPrice");
 
+        // 合計金額を表示する span
+        const upToFreeSpan = document.getElementById("uptofree");
+
         // 数量を減らすボタン
         const minusButton = document.getElementById("minusButton");
 
@@ -100,6 +103,8 @@
         // localStorage は「キー名」と「値」のセットで保存します。
         // 今回はキー名を goodsOrder にしています。
         const STORAGE_KEY = "goodsOrder";
+
+        const UP_TO_FREE_BORDER = 5000;
 
 
         // -----------------------------------
@@ -169,8 +174,19 @@
             // 単価 × 数量
             const totalPrice = productData.price * productData.quantity;
 
+            //送料無料の計算をする *const定数 let変数
+            let upToFreePrice = UP_TO_FREE_BORDER -totalPrice;
+            if (upToFreePrice < 0){
+                upToFreePrice = 0;
+            }
+
+
+
             // 合計金額を画面に表示
             totalPriceSpan.textContent = totalPrice;
+
+            //送料無料の計算を表示
+            upToFreeSpan.textContent = upToFreePrice;
         }
 
 
