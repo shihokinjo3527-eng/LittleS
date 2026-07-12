@@ -131,7 +131,46 @@ section {
     margin: 0 auto;
 }
 
+.about__title {
+    position: relative;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 60px;
+    z-index: 1;
+}
+
+.about__title::before {
+    content: "ABOUT";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.15);
+    letter-spacing: .2em;
+    z-index: -1;
+}
+
 /*プロダクト*/
+
+.product__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.product__title::after {
+    content: "✦────────✦";
+    display: block;
+    color: #EF8D92;
+    font-size: 1rem;
+    margin-top: 15px;
+    letter-spacing: .3em;
+}
+
 .desc__flex {
     display: flex;
     align-items: center;
@@ -203,6 +242,27 @@ section {
 }
 
 /*ショッピングガイド*/
+
+.shopping__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.shopping__title::after {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 4px;
+    margin: 15px auto 0;
+    background: linear-gradient(to right,
+            #EF8D92,
+            #87C0CA);
+    border-radius: 999px;
+}
+
 .shopping__wrapper {
     max-width: 960px;
     margin: 0 auto;
@@ -253,6 +313,30 @@ section {
 }
 
 /*FAQ*/
+
+.faq__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.faq__title::before {
+    content: "?";
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
+    background: #87C0CA;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
 .tab-area {
     display: flex;
     border: 1px solid #5987BF;
@@ -891,10 +975,23 @@ dd {
 
     }
 
+
+    .about__title,
+    .product__title,
+    .shopping__title,
+    .faq__title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        letter-spacing: .08em;
+    }
+
     section {
         margin-top: 80px;
     }
 
+    .about__title::before {
+        font-size: 3rem;
+    }
 
     .about__inner {
         display: block;
