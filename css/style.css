@@ -28,12 +28,19 @@ section {
 .header {
     background-color: #F8CA12;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header__top {
     display: flex;
-    justify-content: space-between;
     margin: 5px;
+    align-items: center;
+}
+
+.header__logo {
+    width: 100px;
 }
 
 .header__title {
@@ -41,15 +48,20 @@ section {
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
-    padding: 20px 0 0 50px;
+    margin: 0 0 0 10px;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .header__cart {
-    text-align: center;
     width: 39px;
 }
 
 .header__cart img {
+    display: block;
     width: 100%;
 }
 
@@ -66,11 +78,13 @@ section {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin-right: 50px;
+    margin: 0;
+    padding: 0;
+    gap: 80px;
+    align-items: baseline;
 }
 
 .header__item {
-    margin-left: 100px;
     font-size: 18px;
 }
 
@@ -133,9 +147,9 @@ section {
 
 .about__title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #444;
-    margin-bottom: 60px;
+    margin-bottom: 120px;
     position: relative;
 }
 
@@ -153,15 +167,22 @@ section {
     list-style: none;
     padding: 0;
     gap: 10px;
+    margin-top: 50px;
+}
+
+.banner-item img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /*プロダクト*/
 
 .product__title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #444;
-    margin-bottom: 60px;
+    margin-bottom: 120px;
     position: relative;
 }
 
@@ -179,6 +200,7 @@ section {
     align-items: center;
     margin-bottom: 80px;
     justify-content: center;
+    gap: 50px;
 }
 
 .desc {
@@ -248,9 +270,9 @@ section {
 
 .shopping__title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #444;
-    margin-bottom: 60px;
+    margin-bottom: 120px;
     position: relative;
 }
 
@@ -273,52 +295,894 @@ section {
     list-style: none;
 }
 
+/* =========================
+   配送・送料
+========================= */
+
 .delivery {
+    padding: 35px 30px 40px;
+}
+
+
+/* =========================
+   上部3カード
+========================= */
+
+.delivery__summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 45px;
+}
+
+
+.delivery__summary-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px;
+
+    border: 1px solid #b9dce1;
+    border-radius: 8px;
+
+    background-color: #f7fcfd;
+
+    text-align: left;
+}
+
+
+.delivery__icon {
+    flex-shrink: 0;
+
+    font-size: 2.3rem;
+}
+
+
+.delivery__summary-content {
+    flex: 1;
+}
+
+
+.delivery__summary-title {
+    margin-bottom: 8px;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+.delivery__summary-text {
+    margin: 0;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+
+    color: #555;
+}
+
+
+.delivery__summary-text strong {
+    color: #4f9ca8;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* =========================
+   下部レイアウト
+========================= */
+
+.delivery__contents {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    text-align: left;
+}
+
+
+.delivery__contents-left,
+.delivery__contents-right {
+    min-width: 0;
+}
+
+
+/* =========================
+   各セクション
+========================= */
+
+.delivery__section {
+    margin-top: 30px;
+}
+
+
+.delivery__section:first-child {
+    margin-top: 0;
+}
+
+
+/* セクションタイトル */
+
+.delivery__heading {
+    position: relative;
+
+    margin-bottom: 18px;
+
+    padding-left: 15px;
+
+    font-size: 1.25rem;
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+.delivery__heading::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    width: 4px;
+    height: 26px;
+
+    border-radius: 3px;
+
+    background-color: #87C0CA;
+
+    transform: translateY(-50%);
+}
+
+
+/* 本文 */
+
+.delivery__text {
+    margin-bottom: 8px;
+
+    font-size: 0.9rem;
+    line-height: 1.9;
+
+    color: #555;
+}
+
+
+/* セクション間の点線 */
+
+.delivery__contents-left .delivery__section {
+    padding-bottom: 25px;
+
+    border-bottom: 1px dashed #ccc;
+}
+
+
+.delivery__contents-left .delivery__section:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================
+   お届け時間
+========================= */
+
+.delivery__time-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.delivery__time-list li {
+    padding: 8px 14px;
+
+    border: 1px solid #87C0CA;
+    border-radius: 30px;
+
+    background-color: #fff;
+
+    font-size: 0.8rem;
+
+    color: #4e939f;
+}
+
+
+.delivery__note {
+    margin-top: 18px;
+
+    font-size: 0.75rem;
+    line-height: 1.8;
+
+    color: #777;
+}
+
+
+/* =========================
+   送料表
+========================= */
+
+.delivery__fee-table {
+    overflow: hidden;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    border: 1px solid #b9dce1;
+    border-radius: 8px;
+}
+
+
+.delivery__fee-row {
+    display: grid;
+
+    grid-template-columns: 1fr 130px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.delivery__fee-row:last-child {
+    border-bottom: none;
+}
+
+
+.delivery__fee-row span {
+    padding: 10px 15px;
+
+    font-size: 0.85rem;
+
+    color: #555;
+}
+
+
+.delivery__fee-row span:last-child {
+    border-left: 1px solid #ddd;
+
     text-align: center;
 }
 
-.delivery__title:nth-of-type(2) {
-    margin-top: 20px;
+
+.delivery__fee-row--head {
+    background-color: #eef8f9;
+
+    font-weight: 500;
 }
 
 
-.delivery__list {
-    list-style: none;
+.delivery__fee-row--head span {
+    color: #444;
 }
+
+
+/* =========================
+   送料無料
+========================= */
+
+.delivery__free {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 28px;
+
+    padding: 22px;
+
+    border: 1px solid #F8CA12;
+    border-radius: 8px;
+
+    background-color: #fffdf4;
+}
+
+
+.delivery__free-icon {
+    flex-shrink: 0;
+
+    font-size: 2.3rem;
+}
+
+
+.delivery__free-content {
+    flex: 1;
+}
+
+
+.delivery__free-title {
+    margin-bottom: 8px;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    color: #e79a00;
+}
+
+
+.delivery__free-text {
+    margin: 0;
+
+    font-size: 0.8rem;
+    line-height: 1.8;
+
+    color: #555;
+}
+
+
+/* =========================
+   タブレット
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .delivery {
+        padding: 30px 20px;
+    }
+
+
+    .delivery__summary {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .delivery__summary-item {
+        padding: 20px;
+    }
+
+
+    .delivery__contents {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .delivery__fee-table {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================
+   お支払い
+========================= */
 
 .pay {
     text-align: center;
+    padding: 35px 30px 40px;
 }
 
-.pay__text {
-    margin-top: 20px;
-}
 
-.pay__list {
-    list-style: none;
-    margin-top: 20px;
-}
+/* タイトル */
 
-.closed {
+.pay__title {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #333;
     text-align: center;
 }
 
-.closed__list {
-    list-style: none;
+
+/* タイトル下の装飾 */
+
+.pay__title-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 12px;
+
+    color: #F8CA12;
+}
+
+
+.pay__title-line {
+    display: block;
+
+    width: 140px;
+    border-top: 2px dotted #F8CA12;
+}
+
+
+/* 説明 */
+
+.pay__text {
+    margin-top: 30px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+
+/* =========================
+   支払い方法
+========================= */
+
+.pay__method {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 20px;
+
+    margin-top: 35px;
+}
+
+
+/* 各支払いカード */
+
+.pay__box {
+    position: relative;
+
+    flex: 1;
+
+    padding: 38px 24px 30px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background-color: #fff;
+
+    overflow: hidden;
+}
+
+
+/* 上の黄色ライン */
+
+.pay__box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background-color: #F8CA12;
+}
+
+
+/* =========================
+   アイコン
+========================= */
+
+.pay__icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 20px;
+}
+
+
+.pay__icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: #87C0CA;
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================
+   支払い方法タイトル
+========================= */
+
+.pay__method-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    color: #333;
+}
+
+
+/* =========================
+   ブランド名
+========================= */
+
+.pay__brands {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
     margin-top: 20px;
+}
+
+
+.pay__brands span {
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    background-color: #fff;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    color: #555;
+}
+
+
+/* =========================
+   区切り線
+========================= */
+
+.pay__border {
+    width: 100%;
+
+    margin: 24px auto 0;
+
+    border-top: 2px dotted #87C0CA;
+
+    opacity: 0.65;
+}
+
+
+/* =========================
+   説明
+========================= */
+
+.pay__description {
+    margin-top: 25px;
+
+    font-size: 0.9rem;
+    line-height: 1.9;
+
+    color: #555;
+}
+
+
+/* =========================
+   注意事項
+========================= */
+
+.pay__note {
+    margin-top: 20px;
+
+    font-size: 0.75rem;
+    line-height: 1.8;
+
+    color: #777;
+}
+
+
+/* =========================
+   セキュリティ
+========================= */
+
+.pay__security {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    font-size: 0.85rem;
+
+    color: #555;
+}
+
+
+.pay__security-icon {
+    font-size: 1.2rem;
+}
+
+/* ==============================
+   休業日
+============================== */
+
+.closed {
+    text-align: center;
 }
 
 .s__panel {
     display: none;
 }
 
+/* 全体 */
+.s__box {
+    width: 100%;
+    padding: 35px 30px 45px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #333;
+}
+
+
+/* タイトル */
+.closed__title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+
+/* タイトル下の装飾 */
+.closed__heading-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: #F8CA12;
+    font-size: 13px;
+}
+
+.closed__line {
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: #F8CA12;
+}
+
+
+/* 休業日の説明 */
+.closed__lead {
+    margin: 22px 0 0;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+
+/* ==============================
+   カレンダーエリア
+============================== */
+
+.closed__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 25px;
+}
+
+
+/* 日曜日・祝日 */
+.closed__day {
+    width: 80px;
+}
+
+.closed__day p {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+
+/* 太陽 */
+.closed__sun {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    margin: 0 auto;
+    border: 2px solid #F8CA12;
+    border-radius: 50%;
+}
+
+.closed__sun::before,
+.closed__sun::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 58px;
+    height: 2px;
+    background-color: #F8CA12;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.closed__sun::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.closed__sun {
+    background-color: #fff;
+    z-index: 1;
+}
+
+
+/* 祝日の星 */
+.closed__star {
+    height: 45px;
+    color: #F8CA12;
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 45px;
+}
+
+
+/* ==============================
+   カレンダー
+============================== */
+
+.closed__calendar {
+    position: relative;
+    width: 165px;
+    height: 135px;
+    padding: 25px 15px 10px;
+    box-sizing: border-box;
+    border: 2px solid #87C0CA;
+    border-radius: 10px;
+    color: #87C0CA;
+}
+
+
+/* カレンダー上部 */
+.closed__calendar::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #87C0CA;
+}
+
+
+/* リング */
+.closed__calendar-top span {
+    position: absolute;
+    top: -12px;
+    width: 13px;
+    height: 25px;
+    background-color: #fff;
+    border: 3px solid #87C0CA;
+    border-radius: 10px;
+}
+
+.closed__calendar-top span:first-child {
+    left: 35px;
+}
+
+.closed__calendar-top span:last-child {
+    right: 35px;
+}
+
+
+/* カレンダーのマス */
+.closed__calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    margin-top: 18px;
+}
+
+.closed__calendar-grid span {
+    height: 8px;
+    border-bottom: 1px solid #87C0CA;
+}
+
+
+/* CLOSED */
+.closed__calendar-text {
+    margin: 8px 0 0;
+    color: #4F9BA6;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: 0.08em;
+}
+
+.closed__calendar-text small {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+
+/* ==============================
+   発送・お問い合わせ
+============================== */
+
+.closed__shipping {
+    max-width: 800px;
+    margin: 35px auto 0;
+}
+
+
+/* 見出し */
+.closed__shipping-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.closed__shipping-title p {
+    margin: 0;
+    color: #5AAAB5;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.closed__shipping-line {
+    width: 180px;
+    border-top: 2px dashed #87C0CA;
+}
+
+
+/* 小さなアイコン */
+.closed__truck {
+    margin-right: 5px;
+    color: #87C0CA;
+}
+
+
+/* 発送説明 */
+.closed__shipping-text {
+    margin: 20px 0 0;
+    font-size: 15px;
+    line-height: 2;
+    letter-spacing: 0.03em;
+}
+
+
+/* 注意書き */
+.closed__notice {
+    max-width: 500px;
+    margin: 20px auto 0;
+    padding: 14px 25px;
+    box-sizing: border-box;
+    background-color: rgba(135, 192, 202, 0.13);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.closed__notice span {
+    margin-right: 8px;
+    color: #87C0CA;
+}
+
+
+/* PCでは改行させない */
+.sp-only {
+    display: none;
+}
+
+
 /*FAQ*/
 
 .faq__title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #444;
-    margin-bottom: 60px;
+    margin-bottom: 120px;
     position: relative;
 }
 
@@ -600,12 +1464,13 @@ dd {
 }
 
 .inform__text {
-    gap: 5px;
+    margin: 50px 0 30px;
 }
 
 .confirm__button__wrapper {
     text-align: center;
 }
+
 
 .confirm__button {
     display: inline-block;
@@ -615,7 +1480,7 @@ dd {
     color: #F7F3ED;
     padding: 20px 40px;
     background: #EF8D1E;
-    border-radius: 30px;
+    border-radius: 50px;
     border: transparent 2px solid;
 }
 
@@ -758,7 +1623,7 @@ dd {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 
@@ -778,8 +1643,12 @@ dd {
 
 .quantity__flex {
     display: flex;
-    flex-direction: column;
-    align-items: start;
+    align-items: center;
+}
+
+.quantity__button {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .cart__button__flex {
@@ -799,7 +1668,7 @@ dd {
     margin-bottom: 30px;
     color: #EF8D1E;
     padding: 0;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .cart__button a::before {
@@ -829,7 +1698,7 @@ dd {
     display: block;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     color: #F7F3ED;
     padding: 20px 40px;
     background: #EF8D1E;
@@ -1091,6 +1960,180 @@ dd {
     .accordion-header {
         margin: 15px 10px;
     }
+
+    /*配送・送料*/
+
+    .delivery {
+        padding: 30px 20px;
+    }
+
+    .delivery__summary {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 35px;
+    }
+
+    .delivery__summary-item {
+        padding: 20px;
+    }
+
+    .delivery__contents {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .delivery__fee-table {
+        width: 100%;
+    }
+
+    /*お支払い方法*/
+
+    .pay {
+        padding: 30px 15px;
+    }
+
+    .pay__title {
+        font-size: 1.5rem;
+    }
+
+    .pay__title-line {
+        width: 100px;
+    }
+
+    .pay__text {
+        margin-top: 25px;
+
+        font-size: 0.9rem;
+    }
+
+    .pay__method {
+        flex-direction: column;
+
+        gap: 20px;
+
+        margin-top: 30px;
+    }
+
+    .pay__box {
+        width: 100%;
+
+        padding: 32px 20px 25px;
+    }
+
+    .pay__icon {
+        width: 50px;
+        height: 50px;
+
+        margin-bottom: 15px;
+    }
+
+    .pay__method-title {
+        font-size: 1.05rem;
+    }
+
+    .pay__description {
+        margin-top: 20px;
+
+        font-size: 0.85rem;
+    }
+
+    .pay__note {
+        font-size: 0.72rem;
+    }
+
+    .pay__security {
+        margin-top: 25px;
+
+        font-size: 0.75rem;
+    }
+
+    /*休業日*/
+
+    .s__box {
+        padding: 30px 15px 35px;
+    }
+
+    .closed__title {
+        font-size: 24px;
+    }
+
+    .closed__lead {
+        font-size: 15px;
+    }
+
+
+    /* カレンダー */
+    .closed__visual {
+        gap: 20px;
+    }
+
+    .closed__calendar {
+        width: 135px;
+        height: 120px;
+    }
+
+    .closed__calendar-text {
+        font-size: 20px;
+    }
+
+    .closed__day {
+        width: 55px;
+    }
+
+    .closed__day p {
+        font-size: 13px;
+    }
+
+    .closed__sun {
+        width: 30px;
+        height: 30px;
+    }
+
+    .closed__sun::before,
+    .closed__sun::after {
+        width: 45px;
+    }
+
+    .closed__star {
+        font-size: 45px;
+    }
+
+
+    /* 発送 */
+    .closed__shipping {
+        margin-top: 30px;
+    }
+
+    .closed__shipping-title {
+        gap: 10px;
+    }
+
+    .closed__shipping-title p {
+        font-size: 16px;
+        white-space: normal;
+    }
+
+    .closed__shipping-line {
+        width: 40px;
+    }
+
+    .closed__shipping-text {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .closed__notice {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .sp-only {
+        display: block;
+    }
+
 
     .accordion-content {
         margin: 0 10px;
