@@ -26,7 +26,7 @@ section {
 
 /*ヘッダー*/
 .header {
-    background-color: #F8CA12;
+    background-color: #FFF;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -89,7 +89,7 @@ section {
 }
 
 .header__item a {
-    color: #F7F3ED;
+    color: #87C0CA;
 }
 
 .header__item a:hover {
@@ -108,7 +108,6 @@ section {
 
 /*アバウト*/
 #about {
-    background-color: #87C0CA;
     padding-top: 30px;
 }
 
@@ -135,6 +134,7 @@ section {
 .about__img {
     width: 40%;
     margin: 0 auto;
+    border-radius: 130px 40px;
 }
 
 .about__text:nth-of-type(2) {
@@ -156,7 +156,7 @@ section {
 .about__title::after {
     content: "✦────────✦";
     display: block;
-    color: #FFF;
+    color: #F8CA12;
     font-size: 1rem;
     margin-top: 15px;
     letter-spacing: .3em;
@@ -196,10 +196,8 @@ section {
 }
 
 .desc__flex {
-    display: flex;
     align-items: center;
     margin-bottom: 80px;
-    justify-content: center;
     gap: 50px;
 }
 
@@ -211,6 +209,8 @@ section {
 
 .product__inner {
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .s__product__inner {
@@ -255,6 +255,7 @@ section {
 .swiper-slide img {
     height: auto;
     width: 100%;
+    border-radius: 30px;
 }
 
 .swiper-pagination-bullet {
@@ -268,6 +269,11 @@ section {
 
 /*ショッピングガイド*/
 
+#shopping__guide {
+    background-color: #87C0CA;
+    padding: 120px 0;
+}
+
 .shopping__title {
     text-align: center;
     font-size: 3rem;
@@ -279,7 +285,7 @@ section {
 .shopping__title::after {
     content: "✦────────✦";
     display: block;
-    color: #F8CA12;
+    color: #FFF;
     font-size: 1rem;
     margin-top: 15px;
     letter-spacing: .3em;
@@ -332,12 +338,36 @@ section {
 }
 
 
+/* =========================
+   配送アイコン
+========================= */
+
 .delivery__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     flex-shrink: 0;
 
-    font-size: 2.3rem;
+    width: 64px;
+    height: 64px;
 }
 
+
+/* SVGアイコン */
+
+.delivery__icon svg {
+    width: 52px;
+    height: 52px;
+
+    fill: none;
+
+    stroke: #87C0CA;
+    stroke-width: 2.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
 
 .delivery__summary-content {
     flex: 1;
@@ -1197,7 +1227,6 @@ section {
 
 .tab-area {
     display: flex;
-    border: 1px solid #5987BF;
     border-bottom: none;
     cursor: pointer;
     max-width: 500px;
@@ -1211,6 +1240,7 @@ section {
     width: calc(100%/3);
     padding: 10px;
     background-color: #FFF;
+    border-radius: 20px 20px 0 0;
 }
 
 .tab:nth-child(n+2) {
@@ -1231,6 +1261,7 @@ section {
     text-align: justify;
     border: 1px solid #5987BF;
     min-height: 386px;
+    border-radius: 0 30px 30px 30px;
 }
 
 .panel.active {
@@ -1258,6 +1289,7 @@ section {
     transition: background .3s ease;
     cursor: pointer;
     position: relative;
+    border-radius: 30px;
 }
 
 .accordion-header::before,
@@ -1285,6 +1317,7 @@ section {
 .accordion-content {
     background-color: #FFF;
     padding: 12px 20px 10px;
+    border-radius: 30px;
 }
 
 .accordion-header span,
@@ -1593,6 +1626,8 @@ dd {
     margin-bottom: 10px;
     border: 2px solid #EF8D1E;
     border-radius: 15px;
+    height: 50px;
+    font-size: 20px;
 }
 
 #plusButton:hover {
@@ -1609,6 +1644,8 @@ dd {
     margin-bottom: 10px;
     border: 2px solid #EF8D1E;
     border-radius: 15px;
+    height: 50px;
+    font-size: 30px;
 }
 
 #minusButton:hover {

@@ -59,22 +59,18 @@
             </div>
         </section>
 
-        <ul class="banner-list">
-            <li class="banner-item"><img src="picture/banner_birthstone.png" alt="banner_birthstone"></li>
-            <li class="banner-item"><img src="picture/banner_luxury.png" alt="banner_luxury"></li>
-            <li class="banner-item"><img src="picture/banner_new arrival.png" alt="banner_new arrival"></li>
-        </ul>
+        <section class="pickup">
+            <ul class="banner-list">
+                <li class="banner-item"><img src="picture/banner_birthstone.png" alt="banner_birthstone"></li>
+                <li class="banner-item"><img src="picture/banner_luxury.png" alt="banner_luxury"></li>
+                <li class="banner-item"><img src="picture/banner_new arrival.png" alt="banner_new arrival"></li>
+            </ul>
+        </section>
 
         <section id="product">
             <h2 class="product__title">Product</h2>
             <div class="product__inner">
                 <div class="desc__flex">
-                    <div class="desc">
-                        <p class="product__name">フラワーブレスレット</p>
-                        <p class="product__desc">ビーズ素材：アクリル・ガラス<br>金属素材：サージカルステンレス</p>
-                        <p class="product__price">￥3,000</p>
-                        <button class="productImage product__button" data-index="0">カートに入れる</button>
-                    </div>
                     <div class="swiper">
                         <div class="product__picture swiper-wrapper">
                             <div class="swiper-slide">
@@ -91,6 +87,12 @@
                         <div class="swiper-pagination"></div>
                         <!-- スクロールバー -->
                         <div class="swiper-scrollbar"></div>
+                    </div>
+                    <div class="desc">
+                        <p class="product__name">フラワーブレスレット</p>
+                        <p class="product__desc">ビーズ素材：アクリル・ガラス<br>金属素材：サージカルステンレス</p>
+                        <p class="product__price">￥3,000</p>
+                        <button class="productImage product__button" data-index="0">カートに入れる</button>
                     </div>
                 </div>
                 <div class="desc__flex">
@@ -192,8 +194,15 @@
                         <div class="delivery__summary">
                             <!-- 発送について -->
                             <div class="delivery__summary-item">
+                                <!-- 発送について -->
                                 <div class="delivery__icon">
-                                    <span>📦</span>
+                                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                                        <path d="M10 20L32 8L54 20V45L32 57L10 45Z"/>
+                                        <path d="M10 20L32 33L54 20"/>
+                                        <path d="M32 33V57"/>
+                                        <path d="M21 14L43 27"/>
+                                        <path d="M43 27V36"/>
+                                    </svg>
                                 </div>
 
                                 <div class="delivery__summary-content">
@@ -207,8 +216,15 @@
 
                             <!-- 配送方法 -->
                             <div class="delivery__summary-item">
+                                <!-- 配送方法 -->
                                 <div class="delivery__icon">
-                                    <span>🚚</span>
+                                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                                        <path d="M7 18H38V45H7Z"/>
+                                        <path d="M38 27H48L57 36V45H38Z"/>
+                                        <path d="M48 27V36H57"/>
+                                        <circle cx="18" cy="47" r="6"/>
+                                        <circle cx="48" cy="47" r="6"/>
+                                    </svg>
                                 </div>
 
                                 <div class="delivery__summary-content">
@@ -222,8 +238,12 @@
 
                             <!-- 日時指定 -->
                             <div class="delivery__summary-item">
+                                <!-- 日時指定 -->
                                 <div class="delivery__icon">
-                                    <span>🕐</span>
+                                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                                        <circle cx="32" cy="32" r="23"/>
+                                        <path d="M32 18V33L42 39"/>
+                                    </svg>
                                 </div>
 
                                 <div class="delivery__summary-content">
@@ -481,23 +501,78 @@
                 </div>
                 <div class="s__panel">
                     <div class="s__box">
-                        <p class="delivery__title">配送方法・配送時間の指定</p>
-                        <ul class="delivery__list">
-                            <li>配送方法：○○便</li>
-                            <li>下記の時間帯指定が可能でございます。ご希望の方は、ご購入の際にご指定頂きますようお願いいたします。</li>
-                            <li>午前中、14:00～16:00、16:00～18:00、18:00～20:00、19:00～21:00のいずれかでご指定可能です。</li>
-                        </ul>
-                        <p class="delivery__title">送料</p>
-                        <p class="delivery__text">ご注文金額が税込5,000円以下の場合、送料は以下のとおりとなります。</p>
-                        <ul class="delivery__list">
-                            <li>北海道・東北：550円</li>
-                            <li>関東：220円</li>
-                            <li>中部：330円</li>
-                            <li>近畿：330円</li>
-                            <li>中国・四国：330円</li>
-                            <li>九州・沖縄：550円</li>
-                        </ul>
-                        <p class="delivery__text2">ご注文金額が税込5,000円以上の場合、送料は無料となります。</p>
+                        <p class="closed__title">休業日</p>
+                        <div class="closed__heading-line">
+                            <span>✦</span>
+                            <span class="closed__line"></span>
+                            <span>✦</span>
+                        </div>
+                        <p class="closed__lead">
+                            日曜・祝日・年末年始は<br>
+                            お休みをいただいております。
+                        </p>
+                        <!-- 休業日アイコンエリア -->
+                        <div class="closed__visual">
+                            <!-- 日曜日 -->
+                            <div class="closed__day">
+                                <div class="closed__sun"></div>
+                                <p>日曜日</p>
+                            </div>
+
+                            <!-- カレンダー -->
+                            <div class="closed__calendar">
+                                <div class="closed__calendar-top">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="closed__calendar-grid">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <p class="closed__calendar-text">
+                                    CLOSED
+                                    <small>お休み</small>
+                                </p>
+                            </div>
+
+                            <!-- 祝日 -->
+                            <div class="closed__day">
+                                <div class="closed__star">☆</div>
+                                <p>祝日</p>
+                            </div>
+                        </div>
+
+                        <!-- 発送について -->
+                        <div class="closed__shipping">
+                            <div class="closed__shipping-title">
+                                <span class="closed__shipping-line"></span>
+                                <p>
+                                    <span class="closed__truck">♢</span>
+                                    発送・お問い合わせについて
+                                </p>
+                                <span class="closed__shipping-line"></span>
+                            </div>
+                            <p class="closed__shipping-text">
+                                ご注文は24時間いつでも承っております。<br>
+                                休業日にいただいたご注文・お問い合わせにつきましては、<br>
+                                翌営業日より順次対応させていただきます。
+                            </p>
+                            <p class="closed__notice">
+                                <span>✿</span>
+                                ※年末年始などの長期休業については、<br class="sp-only">
+                                サイト内にて事前にお知らせいたします。
+                            </p>
+                        </div>
                     </div>
                     <div class="s__box pay">
                         <p class="pay__title">お支払い</p>
