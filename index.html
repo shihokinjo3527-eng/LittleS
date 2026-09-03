@@ -60,6 +60,7 @@
         </section>
 
         <section class="pickup">
+            <h2 class="pickup__title">Pickup</h2>
             <ul class="banner-list">
                 <li class="banner-item"><img src="picture/banner_birthstone.png" alt="banner_birthstone"></li>
                 <li class="banner-item"><img src="picture/banner_luxury.png" alt="banner_luxury"></li>
@@ -373,7 +374,13 @@
                                 <div class="delivery__free">
 
                                     <div class="delivery__free-icon">
-                                        🎁
+                                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                                            <rect x="10" y="27" width="44" height="27" rx="2"/>
+                                            <path d="M7 20H57V30H7Z"/>
+                                            <path d="M32 20V54"/>
+                                            <path d="M21 20C15 20 12 16 14 12C16 8 22 10 32 20"/>
+                                            <path d="M43 20C49 20 52 16 50 12C48 8 42 10 32 20"/>
+                                        </svg>
                                     </div>
 
                                     <div class="delivery__free-content">
@@ -382,7 +389,7 @@
                                         </p>
 
                                         <p class="delivery__free-text">
-                                            1回のご注文金額が税込5,000円以上の場合、<br>
+                                            1回のご注文金額が税込5,000円以上の場合、
                                             送料は無料となります。
                                         </p>
                                     </div>
@@ -485,7 +492,14 @@
                         </div>
 
                         <div class="pay__security">
-                            <span class="pay__security-icon">🔒</span>
+                            <span class="pay__security-icon">
+                                <svg viewBox="0 0 64 64" aria-hidden="true">
+                                    <rect x="14" y="28" width="36" height="27" rx="4"></rect>
+                                    <path d="M22 28V20C22 14.5 26.5 10 32 10C37.5 10 42 14.5 42 20V28"></path>
+                                    <circle cx="32" cy="39" r="2.5"></circle>
+                                    <path d="M32 41.5V47"></path>
+                                </svg>
+                            </span>
 
                             <p>
                                 お客様の決済情報は安全に処理されます。
@@ -493,14 +507,6 @@
                         </div>
                     </div>
                     <div class="closed panel">
-                        <p class="closed__title">休業日</p>
-                        <ul class="closed__list">
-                            <li>日曜・祝日・年末年始は休業となります。<br>発送業務・メールやお問い合わせのご返信は翌営業日から順次ご対応させていただきます。</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="s__panel">
-                    <div class="s__box">
                         <p class="closed__title">休業日</p>
                         <div class="closed__heading-line">
                             <span>✦</span>
@@ -573,6 +579,214 @@
                                 サイト内にて事前にお知らせいたします。
                             </p>
                         </div>
+                    </div>
+                </div>
+                <div class="s__panel">
+                    <div class="delivery panel active">
+
+                        <!-- 発送・配送・日時指定 -->
+                        <div class="delivery__summary">
+
+                            <!-- 発送について -->
+                            <div class="delivery__summary-item">
+                                <div class="delivery__icon">
+                                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                                        <path d="M10 20L32 8L54 20V45L32 57L10 45Z"/>
+                                        <path d="M10 20L32 33L54 20"/>
+                                        <path d="M32 33V57"/>
+                                        <path d="M21 14L43 27"/>
+                                        <path d="M43 27V36"/>
+                                    </svg>
+                                </div>
+
+                                <div class="delivery__summary-content">
+                                    <p class="delivery__summary-title">発送について</p>
+                                    <p class="delivery__summary-text">
+                                        ご入金確認後<br>
+                                        <strong>1〜3営業日以内</strong>に発送
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- 配送方法 -->
+                            <div class="delivery__summary-item">
+                                <div class="delivery__icon">
+                                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                                        <path d="M7 18H38V45H7Z"/>
+                                        <path d="M38 27H48L57 36V45H38Z"/>
+                                        <path d="M48 27V36H57"/>
+                                        <circle cx="18" cy="47" r="6"/>
+                                        <circle cx="48" cy="47" r="6"/>
+                                    </svg>
+                                </div>
+
+                                <div class="delivery__summary-content">
+                                    <p class="delivery__summary-title">配送方法</p>
+                                    <p class="delivery__summary-text">
+                                        ○○便にて<br>
+                                        お届けいたします
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- 日時指定 -->
+                            <div class="delivery__summary-item">
+                                <div class="delivery__icon">
+                                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                                        <circle cx="32" cy="32" r="23"/>
+                                        <path d="M32 18V33L42 39"/>
+                                    </svg>
+                                </div>
+
+                                <div class="delivery__summary-content">
+                                    <p class="delivery__summary-title">日時指定</p>
+                                    <p class="delivery__summary-text">
+                                        ご希望の時間帯を<br>
+                                        ご指定いただけます
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- 配送詳細 -->
+                        <div class="delivery__contents">
+
+                            <!-- 発送について -->
+                            <div class="delivery__section">
+                                <h3 class="delivery__heading">発送について</h3>
+
+                                <p class="delivery__text">
+                                    ご入金確認後、1〜3営業日以内に発送いたします。
+                                </p>
+
+                                <p class="delivery__text">
+                                    発送が完了しましたら、メールにてお知らせいたします。
+                                </p>
+
+                                <p class="delivery__text">
+                                    休業日をはさむ場合は、通常よりお時間をいただく場合がございます。
+                                </p>
+                            </div>
+
+
+                            <!-- 配送方法 -->
+                            <div class="delivery__section">
+                                <h3 class="delivery__heading">配送方法</h3>
+
+                                <p class="delivery__text">
+                                    商品は○○便にてお届けいたします。
+                                </p>
+
+                                <p class="delivery__text">
+                                    発送後のお届け日数は、お届け先の地域や配送状況によって異なります。
+                                </p>
+                            </div>
+
+
+                            <!-- お届け時間 -->
+                            <div class="delivery__section">
+                                <h3 class="delivery__heading">お届け時間の指定</h3>
+
+                                <p class="delivery__text">
+                                    ご希望のお届け時間帯をご指定いただけます。
+                                </p>
+
+                                <ul class="delivery__time-list">
+                                    <li>午前中</li>
+                                    <li>14:00〜16:00</li>
+                                    <li>16:00〜18:00</li>
+                                    <li>18:00〜20:00</li>
+                                    <li>19:00〜21:00</li>
+                                </ul>
+
+                                <p class="delivery__note">
+                                    ※交通状況・天候・配送会社の状況などにより、
+                                    ご希望の時間帯にお届けできない場合がございます。
+                                </p>
+                            </div>
+
+
+                            <!-- 送料 -->
+                            <div class="delivery__section">
+                                <h3 class="delivery__heading">送料について</h3>
+
+                                <p class="delivery__text">
+                                    税込5,000円未満のご注文には、以下の送料がかかります。
+                                </p>
+
+                                <div class="delivery__fee-table">
+
+                                    <div class="delivery__fee-row delivery__fee-row--head">
+                                        <span>お届け地域</span>
+                                        <span>送料</span>
+                                    </div>
+
+                                    <div class="delivery__fee-row">
+                                        <span>北海道・東北</span>
+                                        <span>550円</span>
+                                    </div>
+
+                                    <div class="delivery__fee-row">
+                                        <span>関東</span>
+                                        <span>220円</span>
+                                    </div>
+
+                                    <div class="delivery__fee-row">
+                                        <span>中部</span>
+                                        <span>330円</span>
+                                    </div>
+
+                                    <div class="delivery__fee-row">
+                                        <span>近畿</span>
+                                        <span>330円</span>
+                                    </div>
+
+                                    <div class="delivery__fee-row">
+                                        <span>中国・四国</span>
+                                        <span>330円</span>
+                                    </div>
+
+                                    <div class="delivery__fee-row">
+                                        <span>九州・沖縄</span>
+                                        <span>550円</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- 送料無料 -->
+                            <div class="delivery__free">
+
+                                <div class="delivery__free-icon">
+                                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="10" y="27" width="44" height="27" rx="2"/>
+                                        <path d="M7 20H57V30H7Z"/>
+                                        <path d="M32 20V54"/>
+                                        <path d="M21 20C15 20 12 16 14 12C16 8 22 10 32 20"/>
+                                        <path d="M43 20C49 20 52 16 50 12C48 8 42 10 32 20"/>
+                                    </svg>
+                                </div>
+
+                                <div class="delivery__free-content">
+                                    <p class="delivery__free-title">
+                                        税込5,000円以上で送料無料
+                                    </p>
+
+                                    <p class="delivery__free-text">
+                                        1回のご注文金額が税込5,000円以上の場合、
+                                        送料は無料となります。
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
                     <div class="s__box pay">
                         <p class="pay__title">お支払い</p>
@@ -674,7 +888,15 @@
                         </div>
 
                         <div class="pay__security">
-                            <span class="pay__security-icon">🔒</span>
+                            <span class="pay__security-icon">
+                                <svg viewBox="0 0 64 64" aria-hidden="true">
+                                    <rect x="14" y="28" width="36" height="27" rx="4"></rect>
+                                    <path d="M22 28V20C22 14.5 26.5 10 32 10C37.5 10 42 14.5 42 20V28"></path>
+                                    <circle cx="32" cy="39" r="2.5"></circle>
+                                    <path d="M32 41.5V47"></path>
+                                </svg>
+                            </span>
+
                             <p>
                                 お客様の決済情報は安全に処理されます。
                             </p>

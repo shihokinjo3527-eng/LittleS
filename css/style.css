@@ -176,6 +176,28 @@ section {
     display: block;
 }
 
+/*ピックアップ*/
+
+.pickup__title {
+    text-align: center;
+    font-size: 3rem;
+    color: #444;
+    margin-bottom: 120px;
+    position: relative;
+}
+
+.pickup__title::after {
+    content: "✦────────✦";
+    display: block;
+    color: #F8CA12;
+    font-size: 1rem;
+    margin-top: 15px;
+    letter-spacing: .3em;
+}
+
+
+
+
 /*プロダクト*/
 
 .product__title {
@@ -210,7 +232,7 @@ section {
 .product__inner {
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .s__product__inner {
@@ -247,7 +269,8 @@ section {
 }
 
 .swiper {
-    width: 30%;
+    width: 350px;
+    max-width: 100%;
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
@@ -925,7 +948,27 @@ section {
 
 
 .pay__security-icon {
-    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    width: 28px;
+    height: 28px;
+}
+
+.pay__security-icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: #87C0CA;
+    stroke-width: 2.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 /* ==============================
@@ -956,6 +999,7 @@ section {
     font-size: 28px;
     font-weight: 500;
     letter-spacing: 0.08em;
+    text-align: center;
 }
 
 
@@ -984,6 +1028,7 @@ section {
     font-size: 18px;
     line-height: 1.8;
     letter-spacing: 0.05em;
+    text-align: center;
 }
 
 
@@ -1179,6 +1224,7 @@ section {
     font-size: 15px;
     line-height: 2;
     letter-spacing: 0.03em;
+    text-align: center;
 }
 
 
@@ -1239,17 +1285,15 @@ section {
     align-items: center;
     width: calc(100%/3);
     padding: 10px;
-    background-color: #FFF;
     border-radius: 20px 20px 0 0;
-}
-
-.tab:nth-child(n+2) {
-    border-left: 1px solid #5987BF;
+    background-color: #87C0CA;
+    color: #fff;
+    border: 1px solid #FFF;
 }
 
 .tab.active {
-    background-color: #87C0CA;
-    color: #fff;
+    background-color: #FFF;
+    color: #000;
 }
 
 .panel {
@@ -1259,7 +1303,6 @@ section {
     margin: 0 auto;
     padding: 20px;
     text-align: justify;
-    border: 1px solid #5987BF;
     min-height: 386px;
     border-radius: 0 30px 30px 30px;
 }
@@ -1354,6 +1397,18 @@ section {
     background-color: #F2F2F2;
 }
 
+/* Qを開いたとき、Q下側の角丸をなくす */
+.accordion-header.active {
+    border-radius: 30px 30px 0 0;
+    margin-bottom: 0;
+}
+
+/* Aの上側の角丸をなくす */
+.accordion-header.active+.accordion-content {
+    border-radius: 0 0 30px 30px;
+    margin-top: 0;
+}
+
 /*フッダー*/
 .footer {
     display: flex;
@@ -1401,7 +1456,7 @@ section {
     max-width: 60%;
     min-width: 650px;
     align-items: center;
-
+    border-radius: 30px;
 }
 
 .confirm__inner {
@@ -1489,6 +1544,7 @@ dd {
     padding: 5px;
     width: 100%;
     max-width: 500px;
+    border-radius: 30px;
 }
 
 .inform {
@@ -1577,6 +1633,12 @@ dd {
     margin: 0 auto;
     max-width: 60%;
     min-width: 650px;
+    border-radius: 30px;
+
+}
+
+.cart__img {
+    border-radius: 30px;
 }
 
 .total__p {
@@ -1753,8 +1815,11 @@ dd {
 @media screen and (max-width: 767px) {
 
     .header__top {
-        display: block;
         text-align: center;
+    }
+
+    .header__logo {
+        width: 70px;
     }
 
     .menu-wrapper {
@@ -1827,6 +1892,8 @@ dd {
 
     .header__title {
         padding: 0;
+        text-align: center;
+        font-size: 40px;
     }
 
     .header__list {
@@ -2192,10 +2259,6 @@ dd {
 
     /*カート画面*/
 
-    .header__title {
-        padding: 0;
-        text-align: center;
-    }
 
     .quantity__flex {
         align-items: center;
