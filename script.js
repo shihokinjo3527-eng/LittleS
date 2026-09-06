@@ -201,3 +201,22 @@ $(function(){
     });
 
 });
+
+const pickupItems = document.querySelectorAll('.pickup-slider .banner-item');
+
+let pickupIndex = 0;
+
+function pickupSlide() {
+
+    pickupItems[pickupIndex].classList.remove('active');
+
+    pickupIndex++;
+
+    if (pickupIndex >= pickupItems.length) {
+        pickupIndex = 0;
+    }
+
+    pickupItems[pickupIndex].classList.add('active');
+}
+
+setInterval(pickupSlide, 5000);
