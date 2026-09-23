@@ -24,6 +24,112 @@ section {
     margin-top: 120px;
 }
 
+/* =================================
+   SUMMER SALE ポップアップ
+================================= */
+
+.sale-popup {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    z-index: 9999;
+}
+
+/* 背景 */
+.sale-popup__overlay {
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* ポップアップ本体 */
+.sale-popup__content {
+    position: relative;
+    z-index: 1;
+
+    width: min(500px, 90vw);
+
+    animation: popupFade .5s ease;
+}
+
+/* 画像 */
+.sale-popup__image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* リンク */
+.sale-popup__link {
+    display: block;
+}
+
+/* ×ボタン */
+.sale-popup__close {
+    position: absolute;
+
+    top: -18px;
+    right: -18px;
+
+    z-index: 2;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #fff;
+
+    color: #555;
+
+    font-size: 28px;
+    line-height: 42px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ×ボタン hover */
+.sale-popup__close:hover {
+    background-color: #EF8D1E;
+    color: #fff;
+}
+
+
+/* 表示アニメーション */
+@keyframes popupFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
 /*ヘッダー*/
 .header {
     background-color: #FFF;
@@ -1866,6 +1972,25 @@ dd {
 
     p {
         font-size: 15px;
+    }
+
+    .sale-popup {
+        padding: 20px;
+    }
+
+    .sale-popup__content {
+        width: min(400px, 88vw);
+    }
+
+    .sale-popup__close {
+        top: -15px;
+        right: -10px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 24px;
+        line-height: 38px;
     }
 
     .header {
