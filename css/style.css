@@ -145,6 +145,23 @@ section {
     margin: 0 auto;
 }
 
+.about__text {
+    margin-bottom: 10px;
+}
+
+.about_span {
+    font-size: 30px;
+    opacity: 0.55;
+    font-weight: 700;
+}
+
+.about__textmessage {
+    font-size: 20px;
+    opacity: 0.55;
+    font-weight: 600;
+    color: #87C0CA;
+}
+
 .about__title {
     text-align: center;
     font-size: 3rem;
@@ -174,6 +191,11 @@ section {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 30px;
+}
+
+.banner-list-sp {
+    display: none;
 }
 
 /*ピックアップ*/
@@ -250,6 +272,7 @@ section {
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
+    gap: 20px;
 }
 
 .s__product__inner {
@@ -281,14 +304,13 @@ section {
     display: block;
     margin: 0 auto;
     border: transparent 2px solid;
-    transition: opacity .3s;
+    transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 .product__button:hover {
     background: #F7F3ED;
     color: #EF8D1E;
     border: 2px solid #EF8D1E;
-    opacity: .8;
 }
 
 .swiper {
@@ -309,6 +331,10 @@ section {
     border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
     background: var(--swiper-pagination-bullet-inactive-color, #000);
     opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #EF8D1E !important;
 }
 
 /*ショッピングガイド*/
@@ -340,9 +366,59 @@ section {
     margin: 0 auto;
 }
 
+/* =========================
+   Shopping Guide タブ
+========================= */
+
 .shopping__guider__list {
     display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shopping__guider__item {
+    width: calc(100% / 3);
+    padding: 18px 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.shopping__guider__item:last-child {
+    border-right: none;
+}
+
+/* 選択中 */
+.shopping__guider__item.active {
+    color: #333;
+    background-color: #fff;
+    border-radius: 30px 30px 0 0;
+}
+
+/* ホバー */
+.shopping__guider__item:hover {
+    opacity: .8;
+}
+
+
+/* =========================
+   パネル
+========================= */
+
+.panel {
+    display: none;
+    background-color: #fff;
+}
+
+.panel.active {
+    display: block;
+}
+
+.panel-area {
+    display: block;
 }
 
 /* =========================
@@ -351,6 +427,7 @@ section {
 
 .delivery {
     padding: 35px 30px 40px;
+    border-radius: 0 0 30px 30px;
 }
 
 
@@ -584,63 +661,6 @@ section {
 }
 
 
-/* =========================
-   送料表
-========================= */
-
-.delivery__fee-table {
-    overflow: hidden;
-
-    width: 100%;
-
-    margin-top: 20px;
-
-    border: 1px solid #b9dce1;
-    border-radius: 8px;
-}
-
-
-.delivery__fee-row {
-    display: grid;
-
-    grid-template-columns: 1fr 130px;
-
-    border-bottom: 1px solid #ddd;
-}
-
-
-.delivery__fee-row:last-child {
-    border-bottom: none;
-}
-
-
-.delivery__fee-row span {
-    padding: 10px 15px;
-
-    font-size: 0.85rem;
-
-    color: #555;
-}
-
-
-.delivery__fee-row span:last-child {
-    border-left: 1px solid #ddd;
-
-    text-align: center;
-}
-
-
-.delivery__fee-row--head {
-    background-color: #eef8f9;
-
-    font-weight: 500;
-}
-
-
-.delivery__fee-row--head span {
-    color: #444;
-}
-
 
 /* =========================
    送料無料
@@ -743,10 +763,6 @@ section {
         gap: 35px;
     }
 
-
-    .delivery__fee-table {
-        width: 100%;
-    }
 
 }
 
@@ -1290,7 +1306,13 @@ section {
 }
 
 
-/*FAQ*/
+/* =========================
+   FAQ
+========================= */
+
+#faq {
+    margin-bottom: 120px;
+}
 
 .faq__title {
     text-align: center;
@@ -1309,142 +1331,100 @@ section {
     letter-spacing: .3em;
 }
 
-.tab-area {
-    display: flex;
-    border-bottom: none;
-    cursor: pointer;
-    max-width: 500px;
-    width: 100%;
-}
+/* アコーディオン全体 */
 
-.tab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(100%/3);
-    padding: 10px;
-    border-radius: 20px 20px 0 0;
-    background-color: #87C0CA;
-    color: #fff;
-    border: 1px solid #FFF;
-}
-
-.tab.active {
-    background-color: #FFF;
-    color: #000;
-}
-
-.panel {
-    display: none;
-    background-color: #FFF;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: justify;
-    min-height: 386px;
-    border-radius: 0 30px 30px 30px;
-}
-
-.panel.active {
-    display: block;
-}
-
-
-#faq {
-    margin-bottom: 120px;
-}
-
-.accordion {
+.faq-accordion_wrap {
     max-width: 960px;
     margin: 0 auto;
 }
 
-.accordion-content {
-    display: none;
+/* FAQ項目 */
+
+.faq-accordion_item {
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    background-color: #FFF;
+    overflow: hidden;
+    margin: 0 10px 15px;
 }
 
-.accordion-header {
+/* 質問 */
+
+.faq-accordion_question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 25px;
+    border: none;
     background-color: #FFF;
-    padding: 15px 45px 15px 20px;
-    margin: 15px 0 0;
-    transition: background .3s ease;
+    color: #3f3f3f;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
     cursor: pointer;
-    position: relative;
-    border-radius: 30px;
+    transition: background-color .3s;
 }
 
-.accordion-header::before,
-.accordion-header::after {
-    position: absolute;
-    content: '';
-    top: 1px;
-    right: 20px;
-    bottom: 0;
-    width: 12px;
-    height: 2px;
-    margin: auto;
-    background: #87C0CA;
+/* hover */
+
+.faq-accordion_question:hover {
+    background-color: #f7f7f7;
 }
 
-.accordion-header::after {
-    transform: rotate(-90deg);
-    transition: transform 0.3s;
+/* Q */
+.faq-accordion_question-text::before {
+    content: "Q.";
+    margin-right: 12px;
+    color: #87C0CA;
+    font-weight: 700;
 }
 
-.accordion-header.active::after {
-    transform: rotate(0deg);
+/* ＋ */
+.faq-accordion_question::after {
+    content: "＋";
+    flex-shrink: 0;
+    margin-left: 20px;
+    color: #87C0CA;
+    font-size: 22px;
+    font-weight: 400;
 }
 
-.accordion-content {
-    background-color: #FFF;
-    padding: 12px 20px 10px;
-    border-radius: 30px;
+/* 開いているとき */
+
+.faq-accordion_item.is-open .faq-accordion_question::after {
+    content: "－";
 }
 
-.accordion-header span,
-.accordion-content span {
-    position: relative;
+/* 回答 */
+
+.faq-accordion_answer {
+    display: none;
+
+    padding: 0 25px 22px;
+
+    color: #555;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* A */
+
+.faq-accordion_answer::before {
+    content: "A.";
+
+    margin-right: 12px;
+
+    color: #EF8D1E;
+
+    font-weight: 700;
+}
+
+/* 回答を表示 */
+
+.faq-accordion_item.is-open .faq-accordion_answer {
     display: block;
-    padding-left: 25px;
-}
-
-.indent {
-    display: inline-block;
-}
-
-.accordion-header span::before {
-    position: absolute;
-    content: "Q";
-    top: -2px;
-    left: 0;
-    color: #151E2F;
-    font-size: 17px;
-}
-
-
-.accordion-content .answer::before {
-    position: absolute;
-    content: "A";
-    top: -1px;
-    left: 0;
-    color: #151E2F;
-    font-size: 17px;
-}
-
-.accordion-header:hover {
-    background-color: #F2F2F2;
-}
-
-/* Qを開いたとき、Q下側の角丸をなくす */
-.accordion-header.active {
-    border-radius: 30px 30px 0 0;
-    margin-bottom: 0;
-}
-
-/* Aの上側の角丸をなくす */
-.accordion-header.active+.accordion-content {
-    border-radius: 0 0 30px 30px;
-    margin-top: 0;
 }
 
 /*フッダー*/
@@ -1884,12 +1864,20 @@ dd {
 
 @media screen and (max-width: 767px) {
 
+    p {
+        font-size: 15px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
     .header__top {
         text-align: center;
     }
 
     .header__logo {
-        width: 70px;
+        width: 50px;
     }
 
     .menu-wrapper {
@@ -2063,6 +2051,20 @@ dd {
         width: 80%;
     }
 
+    .about__text {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .about_span {
+        font-size: 25px;
+    }
+
+    .about__textmessage {
+        font-size: 17px;
+    }
+
+
     .pickup__title {
         font-size: 2rem;
         margin-bottom: 50px;
@@ -2072,38 +2074,21 @@ dd {
        Pickup スライダー
     ========================= */
 
-    .pickup-slider {
-        position: relative;
+    .banner-list {
+        display: none;
+    }
+
+    .banner-list-sp {
         display: block;
-        width: calc(100% - 40px);
-        margin: 40px auto 0;
-        padding: 0;
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
+        margin: 10px;
     }
 
-    .pickup-slider .banner-item {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 1s ease;
-        list-style: none;
+    .banner-item-sp img {
+        border-radius: 30px;
     }
 
-    .pickup-slider .banner-item.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .pickup-slider .banner-item img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
+    .banner-item:not(:last-child) {
+        margin-bottom: 20px;
     }
 
     .product__name {
@@ -2132,6 +2117,14 @@ dd {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+    }
+
+    .swiper-button-next:after, .swiper-button-prev:after {
+        color: #EF8D1E !important;
+    }
+
+    .swiper-button-next {
+        color: #EF8D1E !important;
     }
 
     .panel-area {
@@ -2184,6 +2177,7 @@ dd {
     .delivery {
         padding: 30px 20px;
         border-radius: 30px;
+        background-color: #FFF;
     }
 
     .delivery__summary {
@@ -2202,10 +2196,6 @@ dd {
         grid-template-columns: 1fr;
 
         gap: 35px;
-    }
-
-    .delivery__fee-table {
-        width: 100%;
     }
 
     /*お支払い方法*/
@@ -2265,8 +2255,11 @@ dd {
 
     .pay__security {
         margin-top: 25px;
-
         font-size: 0.75rem;
+    }
+
+    .pay__security__alert {
+        font-size: 10px;
     }
 
     /*休業日*/
@@ -2360,6 +2353,10 @@ dd {
 
     .accordion-content {
         margin: 0 10px;
+    }
+
+    .faq-accordion_question-text {
+        font-size: 15px;
     }
 
     .footer {

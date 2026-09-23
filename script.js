@@ -102,10 +102,13 @@ buyButton.forEach(button => {button.addEventListener("click", function () {
 
 
 
-//アコーディオン
-$('.accordion-header').click(function() {
-  $(this).next().slideToggle();
-  $(this).toggleClass('active');
+// FAQアコーディオン
+const faqButtons = document.querySelectorAll('.faq-accordion_question');
+
+faqButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        button.parentElement.classList.toggle('is-open');
+    });
 });
 
 //タブ
@@ -202,21 +205,4 @@ $(function(){
 
 });
 
-const pickupItems = document.querySelectorAll('.pickup-slider .banner-item');
 
-let pickupIndex = 0;
-
-function pickupSlide() {
-
-    pickupItems[pickupIndex].classList.remove('active');
-
-    pickupIndex++;
-
-    if (pickupIndex >= pickupItems.length) {
-        pickupIndex = 0;
-    }
-
-    pickupItems[pickupIndex].classList.add('active');
-}
-
-setInterval(pickupSlide, 5000);
