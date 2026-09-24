@@ -241,6 +241,7 @@ section {
     width: 40%;
     margin: 0 auto;
     border-radius: 30px;
+    min-width: 400px;
 }
 
 .about__text:nth-of-type(2) {
@@ -252,7 +253,7 @@ section {
 }
 
 .about__text {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .about_span {
@@ -491,11 +492,17 @@ section {
     color: #fff;
     cursor: pointer;
     transition: .3s;
+    border: 1 solid #4f9ca8;
 }
 
 .shopping__guider__item:last-child {
     border-right: none;
 }
+
+.shopping__guider__itemtab {
+    border: 1 solid #4f9ca8;
+}
+
 
 /* 選択中 */
 .shopping__guider__item.active {
@@ -509,6 +516,30 @@ section {
     opacity: .8;
 }
 
+.tab-area {
+    display: flex;
+    border-bottom: none;
+    cursor: pointer;
+    max-width: 500px;
+    width: 100%;
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100%/3);
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    background-color: #87C0CA;
+    color: #fff;
+    border: 1px solid #FFF;
+}
+
+.tab.active {
+    background-color: #FFF;
+    color: #000;
+}
 
 /* =========================
    パネル
@@ -517,6 +548,8 @@ section {
 .panel {
     display: none;
     background-color: #fff;
+    border-radius: 0 0 30px 30px;
+    padding: 50px;
 }
 
 .panel.active {
@@ -525,6 +558,7 @@ section {
 
 .panel-area {
     display: block;
+
 }
 
 /* =========================
@@ -534,6 +568,28 @@ section {
 .delivery {
     padding: 35px 30px 40px;
     border-radius: 0 0 30px 30px;
+}
+
+.delivery__title {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+}
+
+.delivery__title-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: #F8CA12;
+}
+
+.delivery__title-line {
+    display: block;
+    width: 140px;
+    border-top: 2px dotted #F8CA12;
 }
 
 
@@ -546,6 +602,7 @@ section {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-bottom: 45px;
+    margin-top: 30px;
 }
 
 
@@ -1176,9 +1233,8 @@ section {
 
 .closed__line {
     display: block;
-    width: 100px;
-    height: 1px;
-    background-color: #F8CA12;
+    width: 140px;
+    border-top: 2px dotted #F8CA12;
 }
 
 
@@ -1503,34 +1559,26 @@ section {
 }
 
 /* 回答 */
-
 .faq-accordion_answer {
-    display: none;
-
-    padding: 0 25px 22px;
-
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 25px;
     color: #555;
-
     font-size: 16px;
     line-height: 1.8;
+    opacity: 0;
+    transition:
+        max-height 0.7s ease,
+        opacity 0.4s ease,
+        padding 0.7s ease;
 }
 
-/* A */
-
-.faq-accordion_answer::before {
-    content: "A.";
-
-    margin-right: 12px;
-
-    color: #EF8D1E;
-
-    font-weight: 700;
-}
 
 /* 回答を表示 */
-
 .faq-accordion_item.is-open .faq-accordion_answer {
-    display: block;
+    max-height: 300px;
+    padding: 22px 25px;
+    opacity: 1;
 }
 
 /*フッダー*/
@@ -1662,7 +1710,7 @@ dd {
 
 .form__box {
     border: 1px solid #3f3f3f;
-    padding: 5px;
+    padding: 8px;
     width: 100%;
     border-radius: 10px;
 }
@@ -2136,7 +2184,7 @@ dd {
 
     .slider-image__wrapper {
         width: 100%;
-        height: 900px;
+        height: 90vh;
         text-align: left;
         overflow: hidden;
         position: relative;
@@ -2174,6 +2222,7 @@ dd {
 
     .about__img {
         width: 80%;
+        min-width: 250px;
     }
 
     .about__text {
