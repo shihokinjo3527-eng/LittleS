@@ -376,10 +376,35 @@ section {
 }
 
 .product__inner {
+    width: calc(100% - 40px);
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
+    justify-content: center;
+    gap: 50px;
+}
+
+.product__inner .desc__flex {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 520px;
+    padding: 35px;
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius: 30px;
+}
+
+.product__inner .swiper {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.product__inner .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
 }
 
 .s__product__inner {
@@ -1685,9 +1710,9 @@ section {
 }
 
 .form__section {
-    width: 90%;
-    margin: 70px auto 0;
-    max-width: 600px;
+    width: 60%;
+    margin: 0 auto;
+    min-width: 400px;
 }
 
 .form {
@@ -1710,9 +1735,10 @@ dd {
 
 .form__box {
     border: 1px solid #3f3f3f;
-    padding: 8px;
+    padding: 10px;
     width: 100%;
     border-radius: 10px;
+    background-color: #DBECEF;
 }
 
 .inform {
@@ -1834,7 +1860,7 @@ dd {
     background-color: #FFF;
     padding: 30px;
     margin: 0 auto;
-    max-width: 60%;
+    max-width: 50%;
     min-width: 650px;
     border-radius: 30px;
     align-items: center;
@@ -2580,7 +2606,7 @@ dd {
     }
 
     .total__bold {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .total__thin {
@@ -2596,6 +2622,10 @@ dd {
     .cart__text {
         margin-bottom: 30px;
         font-size: 15px;
+    }
+
+    .quantity__button {
+        margin: 0 auto;
     }
 
     #plusButton {
