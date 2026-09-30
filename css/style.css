@@ -381,7 +381,7 @@ section {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 150px;
 }
 
 .product__inner .desc__flex {
@@ -520,10 +520,6 @@ section {
     border: 1 solid #4f9ca8;
 }
 
-.shopping__guider__item:last-child {
-    border-right: none;
-}
-
 .shopping__guider__itemtab {
     border: 1 solid #4f9ca8;
 }
@@ -533,7 +529,7 @@ section {
 .shopping__guider__item.active {
     color: #333;
     background-color: #fff;
-    border-radius: 30px 30px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 
 /* ホバー */
@@ -579,6 +575,7 @@ section {
 
 .panel.active {
     display: block;
+    border-radius: 0 30px 30px 30px;
 }
 
 .panel-area {
@@ -592,7 +589,7 @@ section {
 
 .delivery {
     padding: 35px 30px 40px;
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 30px 30px 30px;
 }
 
 .delivery__title {
@@ -1733,6 +1730,10 @@ dd {
     margin-left: 30%;
 }
 
+input[type="radio"] {
+    accent-color: #EF8D1E;
+}
+
 .form__box {
     border: 1px solid #3f3f3f;
     padding: 10px;
@@ -1800,6 +1801,7 @@ dd {
     background: #EF8D1E;
     border-radius: 50px;
     border: transparent 2px solid;
+    transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 .confirm__button:hover {
@@ -1920,6 +1922,7 @@ dd {
     border-radius: 15px;
     height: 50px;
     font-size: 20px;
+    transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 #plusButton:hover {
@@ -1938,6 +1941,7 @@ dd {
     border-radius: 15px;
     height: 50px;
     font-size: 30px;
+    transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 #minusButton:hover {
@@ -2033,6 +2037,7 @@ dd {
     background: #EF8D1E;
     border-radius: 30px;
     border: transparent 2px solid;
+    transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 .cart__next__button a:hover {
@@ -2333,6 +2338,10 @@ dd {
 
     .shopping__guider__list {
         display: none;
+    }
+
+    .panel.active {
+        border-radius: 30px;
     }
 
     .s__panel {
