@@ -24,6 +24,14 @@ section {
     margin-top: 120px;
 }
 
+.about__title,
+.pickup__title,
+.product__title,
+.shopping__title,
+.faq__title {
+    letter-spacing: .08em;
+}
+
 /* =================================
    SUMMER SALE ポップアップ
 ================================= */
@@ -2224,6 +2232,7 @@ input[type="radio"] {
 
 
     .about__title,
+    .pickup__title,
     .product__title,
     .shopping__title,
     .faq__title {
