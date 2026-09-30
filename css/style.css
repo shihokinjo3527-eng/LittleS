@@ -2678,6 +2678,10 @@ input[type="radio"] {
 
     /*商品確認画面*/
 
+    .confirm__data {
+        padding: 0 10px;
+    }
+
     .confirm__product {
         min-width: 300px;
         display: block;
@@ -2685,6 +2689,7 @@ input[type="radio"] {
 
     .confirm__wrapper {
         margin-left: 0;
+        padding: 20px;
     }
 
     .confirm__flex {
@@ -2693,6 +2698,8 @@ input[type="radio"] {
 
     .confirm__p {
         font-size: 14px;
+        padding: 5px;
+        margin-bottom: 10px;
     }
 
 
@@ -2719,6 +2726,10 @@ input[type="radio"] {
         display: flex;
         align-items: center;
         gap: 8px;
+    }
+
+    .form__section {
+        min-width: 320px;
     }
 
 
