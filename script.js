@@ -214,25 +214,14 @@ const salePopup = document.getElementById("salePopup");
 const salePopupClose = document.getElementById("salePopupClose");
 const salePopupOverlay = document.querySelector(".sale-popup__overlay");
 
-// すでに閉じたことがある場合
-if (sessionStorage.getItem("salePopupClosed")) {
 
+// ×ボタンで閉じる
+salePopupClose.addEventListener("click", function () {
     salePopup.style.display = "none";
+});
 
-}
 
-// ポップアップを閉じる処理
-function closeSalePopup() {
-
+// 黒い背景をクリックしても閉じる
+salePopupOverlay.addEventListener("click", function () {
     salePopup.style.display = "none";
-
-    // 閉じたことを記録
-    sessionStorage.setItem("salePopupClosed", "true");
-
-}
-
-// ×ボタン
-salePopupClose.addEventListener("click", closeSalePopup);
-
-// 背景クリック
-salePopupOverlay.addEventListener("click", closeSalePopup);
+});
