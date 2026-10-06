@@ -215,6 +215,38 @@ const salePopupClose = document.getElementById("salePopupClose");
 const salePopupOverlay = document.querySelector(".sale-popup__overlay");
 
 
+// -----------------------------------
+// ポップアップ表示回数
+// -----------------------------------
+
+const SALE_POPUP_KEY = "salePopupCount";
+
+// 今までの表示回数を取得
+let salePopupCount = Number(localStorage.getItem(SALE_POPUP_KEY)) || 0;
+
+
+// 3回未満なら表示
+if (salePopupCount < 3) {
+
+    salePopup.style.display = "flex";
+
+    // 表示回数を1回増やす
+    salePopupCount++;
+
+    // localStorageに保存
+    localStorage.setItem(SALE_POPUP_KEY, salePopupCount);
+
+} else {
+
+    // 4回目以降は表示しない
+    salePopup.style.display = "none";
+}
+
+
+// -----------------------------------
+// ポップアップを閉じる
+// -----------------------------------
+
 // ×ボタンで閉じる
 salePopupClose.addEventListener("click", function () {
     salePopup.style.display = "none";
