@@ -392,6 +392,7 @@ section {
 .shopping__wrapper {
     max-width: 960px;
     margin: 0 auto;
+    width: calc(100% - 40px);
 }
 
 /* =========================
@@ -1112,6 +1113,7 @@ section {
 
 .closed {
     text-align: center;
+    padding: 35px 30px 40px;
 }
 
 .s__panel {
